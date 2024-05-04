@@ -42,3 +42,8 @@
         padding: 10px;
     }
 }
+
+/* Add space below header for content */
+main {
+    margin-top: 60px; /* Adjust as needed */
+}
