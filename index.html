@@ -4,71 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - CV</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
-    <header>
-        <h1>Your Name - </h1><h2>Version 1.2</h2>
-        <nav>
-            <ul>
-                <li><a href="#intro">Introduction</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Header -->
+    <header class="bg-dark text-light py-3">
+        <div class="container">
+            <h1 class="m-0">Your Name</h1> Version 1.3
+            <nav>
+                <ul class="list-inline m-0">
+                    <li class="list-inline-item"><a href="#intro" class="text-light">Introduction</a></li>
+                    <li class="list-inline-item"><a href="#experience" class="text-light">Experience</a></li>
+                    <li class="list-inline-item"><a href="#skills" class="text-light">Skills</a></li>
+                    <li class="list-inline-item"><a href="#contact" class="text-light">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
+    <!-- Main Content -->
     <main>
-        <section id="intro" data-aos="fade-right">
-            <h2>Welcome to My CV Website</h2>
-            <p>This is where you can learn more about me and my skills.</p>
+        <!-- Introduction Section -->
+        <section id="intro" class="bg-primary text-light py-5">
+            <div class="container">
+                <h2>Welcome to My CV Website</h2>
+                <p>This is where you can learn more about me and my skills.</p>
+            </div>
         </section>
-        <section id="about" data-aos="fade-up">
-            <h2>About Me</h2>
-            <p>Results-driven Security leader with a proven track record of success in multinational cybersecurity trust organizations. Proven track record of elevating performance excellence, delivering exceptional results, and fostering positive relationships. Adept in implementing cutting-edge solutions, promoting security awareness, contributing to digital resiliency, and driving operational excellence in Security management.</p>
-        </section>
-        <section id="experience" data-aos="fade-up">
-            <h2>Experience</h2>
-            <p><strong>Security Engineer Lead (Application) at a Fortune 500 Global Engineering Provider</strong><br>
-            Cybersecurity | Snyk (SAST ) | Rapid7 (DAST) | Contrast-Assess (IAST) | Open Source Scanning (Mend) | Vulnerability Scanning (Tenable Nessus) | SonarQube (SCA) | MFA & Access Keys | Pen Testing | Crowdstrike (Intrusion Detection) | Deprecated OS | Container Critical/Top Issues | Incident Management | Security Release Review | AWS | Azure | DevOps | Threat Modeling | OWASP Top 10 | CWE 25 | Risk Score Management | Mentoring | Manage App Security | Reporting</p>
-            <!-- Add more experience details as needed -->
-        </section>
-        <section id="skills" data-aos="fade-up">
-            <h2>Skills</h2>
-            <p><strong>Security:</strong><br>
-            App Security Testing - Snyk | Rapid7 | Contrast-Assess<br>
-            Scanning - Mend | Tenable Nessus | SonarQube<br>
-            Other Security Controls - Penetration Testing | Critical Access Control | Crowdstrike | Deprecated OS<br>
-            Incident, Patching, & Vulnerability Management<br>
-            Cryptography, Encryption & SSL<br>
-            Phishing & Malware Audits<br>
-            Security Alerts & Software Release Security Reviews<br>
-            Password/Secret/Access Key Controls<br>
-            ISO Compliance<br>
-            Governance</p>
 
-            <p><strong>Leadership:</strong><br>
-            Team Building and Development<br>
-            Change Management<br>
-            Reporting<br>
-            Vendor and Contracts Management<br>
-            Incident Response and Mitigation<br>
-            Hiring and On-Boarding<br>
-            Cost Saving Optimization Strategist</p>
-
-            <p><strong>Cloud & Systems:</strong><br>
-            Cloud - AWS | Azure<br>
-            Planning & Ticketing - Jira | ServiceNow<br>
-            CI/CD Build & Deploy - Azure DevOps | Github | Jenkins<br>
-            Infrastructure As Code - CloudFormation | ARM | Terraform<br>
-            Logging/Monitoring - Splunk | BigPanda</p>
+        <!-- About Me Section -->
+        <section id="about" class="py-5">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>Results-driven Security leader with a proven track record of success in multinational cybersecurity trust organizations. Proven track record of elevating performance excellence, delivering exceptional results, and fostering positive relationships. Adept in implementing cutting-edge solutions, promoting security awareness, contributing to digital resiliency, and driving operational excellence in Security management.</p>
+            </div>
         </section>
-        <section id="contact" data-aos="fade-up">
-            <h2>Contact</h2>
-            <!-- Add contact information here -->
+
+        <!-- Experience Section -->
+        <section id="experience" class="bg-light py-5">
+            <div class="container">
+                <h2>Experience</h2>
+                <!-- Add experience details here -->
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-5">
+            <div class="container">
+                <h2>Skills</h2>
+                <!-- Add skills details here -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-secondary text-light py-5">
+            <div class="container">
+                <h2>Contact</h2>
+                <!-- Add contact information here -->
+            </div>
         </section>
     </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- AOS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init();
