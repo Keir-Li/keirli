@@ -44,11 +44,10 @@
         }
 
         .jumbotron {
-            color: #fff;
-            text-align: center;
-            padding: 100px 0;
             position: relative;
-            overflow: hidden; /* Hide overflowing video */
+            overflow: hidden;
+            color: white; /* Adjust text color as needed */
+            text-align: center; /* Center align text */
         }
 
         .jumbotron video {
@@ -70,6 +69,27 @@
         .jumbotron p {
             font-size: 1.5rem;
             font-weight: 500;
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensure the video is behind other content */
+            overflow: hidden;
+        }
+        
+        .video-background iframe {
+            width: 100vw;
+            height: 56.25vw; /* 16:9 aspect ratio */
+            min-height: 100vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none; /* Allow clicking through the video to underlying content */
         }
 
         .section-heading {
@@ -105,16 +125,15 @@
     <!-- Main Content -->
     <main>
         <!-- Introduction Section -->
-        <section id="intro" class="jumbotron">
-            <video autoplay muted loop>
-                <source src="https://www.youtube.com/watch?v=xQQskN6UXRY&pp=ygUbY3liZXJzZWN1cml0eSBzdG9jayBmb290YWdl" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="container">
-                <h1>Welcome to My CV Website</h1>
-                <p>This is where you can learn more about me and my skills.</p>
-            </div>
-        </section>
+    <section id="intro" class="jumbotron">
+        <div class="video-background">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/xQQskN6UXRY?autoplay=1&mute=1&loop=1&playlist=xQQskN6UXRY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="container">
+            <h1>Welcome to My CV Website</h1>
+            <p>This is where you can learn more about me and my skills.</p>
+        </div>
+    </section>
 
         <!-- Other sections... -->
     </main>
