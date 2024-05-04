@@ -50,6 +50,15 @@
             text-align: center; /* Center align text */
         }
 
+        #background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Ensure the video is behind other content */
+
         .jumbotron video {
             position: absolute;
             top: 0;
@@ -126,9 +135,10 @@
     <main>
         <!-- Introduction Section -->
     <section id="intro" class="jumbotron">
-        <div class="video-background">
-            <iframe width="560" height="315" src="https://videos.pexels.com/video-files/6330771/6330771-hd_1920_1080_30fps.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        <video autoplay muted loop id="background-video">
+            <source src="cybersecuritystockvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <div class="container">
             <h1>Welcome to My CV Website</h1>
             <p>This is where you can learn more about me and my skills.</p>
