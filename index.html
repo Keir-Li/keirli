@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Name - CV</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
-        /* Style for smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+        /* Add custom CSS styles here */
     </style>
 </head>
 <body>
@@ -17,7 +15,6 @@
         <h1>Your Name</h1>
         <nav>
             <ul>
-                <!-- Use anchor links with IDs to navigate to specific sections -->
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -26,17 +23,31 @@
         </nav>
     </header>
     <main>
-        <!-- Sections with IDs corresponding to the anchor links -->
-        <section id="about">
+        <section id="intro" data-aos="fade-right">
+            <h2>Welcome to My CV Website</h2>
+            <p>This is where you can learn more about me and my skills.</p>
+        </section>
+        <section id="about" data-aos="fade-up">
             <h2>About Me</h2>
             <p>Add your introduction here.</p>
         </section>
-        <section id="experience">
+        <section id="experience" data-aos="fade-up">
             <h2>Experience</h2>
             <p>Add your experience here.</p>
         </section>
-        <section id="skills">
+        <section id="skills" data-aos="fade-up">
             <h2>Skills</h2>
             <p>Add your skills here.</p>
         </section>
-        <section
+        <section id="contact" data-aos="fade-up">
+            <h2>Contact</h2>
+            <p>Add your contact information here.</p>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS library for scroll animations
+        AOS.init();
+    </script>
+</body>
+</html>
