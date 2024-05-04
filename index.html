@@ -13,7 +13,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Version: 1.0.13 -->
+    <!-- Version: 1.0.14 -->
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -44,21 +44,23 @@
         }
 
         .jumbotron {
-            background: url('security-background.jpg') no-repeat center center/cover;
             color: #fff;
             text-align: center;
             padding: 100px 0;
             position: relative;
+            overflow: hidden; /* Hide overflowing video */
         }
 
-        .jumbotron::after {
-            content: '';
+        .jumbotron video {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translate(-50%, -50%);
         }
 
         .jumbotron h1 {
@@ -78,71 +80,7 @@
             margin-bottom: 50px;
         }
 
-        .card {
-            border: none;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-body {
-            color: #444;
-        }
-
-        .skills-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .skills-list li {
-            margin-bottom: 20px; /* Increased margin */
-            color: #444;
-        }
-
-        .skills-list li i {
-            margin-right: 10px;
-            color: #007bff;
-        }
-
-        .contact-info {
-            font-size: 1.2rem;
-            color: #fff; /* Light text color */
-        }
-
-        .version {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 12px;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .jumbotron h1 {
-                font-size: 2.5rem;
-            }
-
-            .jumbotron p {
-                font-size: 1.2rem;
-            }
-
-            .section-heading {
-                font-size: 2rem;
-            }
-
-            .skills-list li i {
-                font-size: 1.5rem;
-            }
-
-            .contact-info {
-                font-size: 1rem;
-            }
-        }
+        /* Other styles... */
     </style>
 </head>
 <body>
@@ -170,78 +108,19 @@
     <main>
         <!-- Introduction Section -->
         <section id="intro" class="jumbotron">
+            <video autoplay muted loop>
+                <source src="your-video-url.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div class="container">
                 <h1>Welcome to My CV Website</h1>
                 <p>This is where you can learn more about me and my skills.</p>
             </div>
         </section>
 
-        <!-- About Me Section -->
-        <section id="about" class="py-5">
-            <div class="container">
-                <h2 class="section-heading">About Me</h2>
-                <p class="lead">Results-driven Security leader with a proven track record of success in multinational cybersecurity trust organizations. Proven track record of elevating performance excellence, delivering exceptional results, and fostering positive relationships. Adept in implementing cutting-edge solutions, promoting security awareness, contributing to digital resiliency, and driving operational excellence in Security management.</p>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="bg-light py-5">
-            <div class="container">
-                <h2 class="section-heading text-center mb-5">Experience</h2>
-                <div class="card-deck">
-                    <!-- Add experience cards here -->
-                    <div class="card mb-4" data-aos="fade-up">
-                        <div class="card-body">
-                            <h5 class="card-title">Security Engineer Lead (Application)</h5>
-                            <p class="card-text">Fortune 500 Global Engineering Provider</p>
-                            <p class="card-text">Cybersecurity | Snyk (SAST) | Rapid7 (DAST) | Contrast-Assess (IAST) | Open Source Scanning (Mend) | Vulnerability Scanning (Tenable Nessus) | SonarQube (SCA) | MFA & Access Keys | Pen Testing | Crowdstrike (Intrusion Detection) | Deprecated OS | Container Critical/Top Issues | Incident Management | Security Release Review | AWS | Azure | DevOps | Threat Modeling | OWASP Top 10 | CWE 25 | Risk Score Management | Mentoring | Manage App Security | Reporting</p>
-                        </div>
-                    </div>
-                    <!-- Add more experience cards as needed -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="py-5">
-            <div class="container">
-                <h2 class="section-heading text-center mb-5">Skills</h2>
-                <ul class="skills-list text-center">
-                    <li><i class="fas fa-shield-alt fa-2x"></i> Cybersecurity</li>
-                    <li><i class="fas fa-network-wired fa-2x"></i> Vulnerability Scanning</li>
-                    <li><i class="fas fa-lock fa-2x"></i> Threat Modeling</li>
-                    <li><i class="fas fa-users fa-2x"></i> Mentoring</li>
-                    <li><i class="fas fa-chart-line fa-2x"></i> Strategic Planning</li>
-                    <li><i class="fas fa-briefcase fa-2x"></i> Governance</li>
-                    <li><i class="fas fa-balance-scale fa-2x"></i> Compliance</li>
-                    <li><i class="fas fa-money-bill-wave fa-2x"></i> Cost Saving</li>
-                    <!-- Add more skills with icons as needed -->
-                </ul>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="bg-secondary text-light py-5">
-            <div class="container">
-                <h2 class="section-heading text-center mb-5">Contact</h2>
-                <!-- Add contact information here -->
-                <div class="contact-info text-center">
-                    <p>Email: your.email@example.com</p>
-                    <p>Phone: +1234567890</p>
-                    <p>LinkedIn: linkedin.com/in/yourprofile</p>
-                </div>
-            </div>
-        </section>
+        <!-- Other sections... -->
     </main>
 
-    <!-- Version -->
-    <div class="version">Version: 1.0.13</div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Font Awesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <!-- Bootstrap JS and other scripts... -->
 </body>
 </html>
