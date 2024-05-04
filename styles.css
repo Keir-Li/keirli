@@ -13,6 +13,13 @@ body {
     line-height: 1.6;
 }
 
+/* Add space between header and content */
+main {
+    padding-top: 120px; /* Adjust padding to create space */
+    padding-bottom: 20px;
+}
+
+
 h1, h2, h3 {
     margin-bottom: 20px;
 }
