@@ -9,10 +9,10 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <!-- Version: 1.0.5 -->
+    <!-- Version: 1.0.8 -->
     <style>
         header {
-            padding-top: 0.25rem; /* Adjusted top padding */
+            padding-top: 0.5rem; /* Adjusted top padding */
         }
 
         .version {
@@ -35,6 +35,15 @@
         .skills-list li i {
             margin-right: 10px;
         }
+
+        .card {
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -54,7 +63,7 @@
     </header>
 
     <!-- Main Content -->
-    <main style="margin-top: 100px;"> <!-- Adjusted margin-top to create space below header -->
+    <main style="margin-top: 20px;"> <!-- Adjusted margin-top to create less space below header -->
         <!-- Introduction Section -->
         <section id="intro" class="bg-primary text-light py-5">
             <div class="container">
@@ -75,37 +84,7 @@
         <section id="experience" class="bg-light py-5">
             <div class="container">
                 <h2>Experience</h2>
-                <!-- Security Engineer Lead (Application) -->
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Security Engineer Lead (Application) at a Fortune 500 Global Engineering Provider</h5>
-                        <p class="card-text">Cybersecurity | Snyk (SAST) | Rapid7 (DAST) | Contrast-Assess (IAST) | Open Source Scanning (Mend) | Vulnerability Scanning (Tenable Nessus) | SonarQube (SCA) | MFA & Access Keys | Pen Testing | Crowdstrike (Intrusion Detection) | Deprecated OS | Container Critical/Top Issues | Incident Management | Security Release Review | AWS | Azure | DevOps | Threat Modeling | OWASP Top 10 | CWE 25 | Risk Score Management | Mentoring | Manage App Security | Reporting</p>
-                    </div>
-                </div>
-
-                <!-- Senior Software Engineer -->
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Senior Software Engineer at a World Class Leading Recruitment Organisation</h5>
-                        <p class="card-text">Spunk Monitoring & Alerting | Salesforce | Waterfall | AWS | Mulesoft API Management | DevOps | Vulnerability & Patching Manager | MoveItAutomation | ServiceNow | BigPanda | Cybersecurity | Incident Management | KeePass Security Set up & Management | Jira | Documentation and KB Builder</p>
-                    </div>
-                </div>
-
-                <!-- Application Support Lead -->
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Application Support Lead at a National Infrastructure Hub</h5>
-                        <p class="card-text">.NET Framework, Core, 5 & 6 | Blazor | Scrum/Agile | GitHub & DevOps | UAT Lead | Azure | API Management | IAC ARM Templates | Cybersecurity | 365 & Active Directory | LastPass Security | Phishing Lead & Auditor | Migrations (Azure & SharePoint) | Technical & Supporting Application Lead | Documentation</p>
-                    </div>
-                </div>
-
-                <!-- Tier 3 Senior Technical Analyst Lead & Tier 1 Technical Analyst -->
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">Tier 3 Senior Technical Analyst Lead & Tier 1 Technical Analyst at a Cybersecurity Provider</h5>
-                        <p class="card-text">Cybersecurity | UAT & Hypercare | Jira Incident & Bug Ticket Manager | Azure | Salesforce | Project & Process Management | Senior POC, Out of Hours & Escalation Point | Global Partner Trainer (USA & Europe)</p>
-                    </div>
-                </div>
+                <!-- Experience cards go here -->
             </div>
         </section>
 
@@ -114,15 +93,7 @@
             <div class="container">
                 <h2>Skills</h2>
                 <ul class="skills-list">
-                    <li><i class="fas fa-shield-alt"></i>Cybersecurity</li>
-                    <li><i class="fas fa-network-wired"></i>Vulnerability Scanning</li>
-                    <li><i class="fas fa-lock"></i>Threat Modeling</li>
-                    <li><i class="fas fa-users"></i>Mentoring</li>
-                    <li><i class="fas fa-chart-line"></i>Strategic Planning</li>
-                    <li><i class="fas fa-briefcase"></i>Governance</li>
-                    <li><i class="fas fa-balance-scale"></i>Compliance</li>
-                    <li><i class="fas fa-money-bill-wave"></i>Cost Saving</li>
-                    <!-- Add more skills with icons as needed -->
+                    <!-- Skills list goes here -->
                 </ul>
             </div>
         </section>
@@ -131,13 +102,13 @@
         <section id="contact" class="bg-secondary text-light py-5">
             <div class="container">
                 <h2>Contact</h2>
-                <!-- Add contact information here -->
+                <!-- Contact information goes here -->
             </div>
         </section>
     </main>
 
     <!-- Version -->
-    <div class="version">Version: 1.0.5</div>
+    <div class="version">Version: 1.0.8</div>
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -148,9 +119,4 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     <!-- AOS Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-</body>
-</html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/
