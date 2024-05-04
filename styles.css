@@ -9,16 +9,9 @@ body, h1, h2, h3, p, ul, li {
 body {
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;
-    color: #333;
+    color: #333; /* Change text color to black */
     line-height: 1.6;
 }
-
-/* Add space between header and content */
-main {
-    padding-top: 120px; /* Adjust padding to create space */
-    padding-bottom: 20px;
-}
-
 
 h1, h2, h3 {
     margin-bottom: 20px;
@@ -76,7 +69,7 @@ nav ul li a:hover {
 
 /* Main content styles */
 main {
-    padding-top: 80px; /* Adjust padding to account for fixed header */
+    padding-top: 120px; /* Adjusted padding */
     padding-bottom: 20px;
 }
 
@@ -86,18 +79,6 @@ section {
     margin-bottom: 40px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Intro section styles */
-#intro {
-    background-color: #007bff;
-    color: #fff;
-}
-
-/* Contact section styles */
-#contact {
-    background-color: #ffc107;
-    color: #333;
 }
 
 /* Scroll animations */
