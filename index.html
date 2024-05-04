@@ -9,7 +9,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <!-- Version: 1.0.9 -->
+    <!-- Version: 1.0.10 -->
     <style>
         header {
             padding-top: 0.5rem; /* Adjusted top padding */
@@ -43,6 +43,10 @@
         .card:hover {
             transform: scale(1.05);
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card:hover .card-body {
+            background-color: rgba(0, 0, 255, 0.1); /* Faint highlight */
         }
     </style>
 </head>
@@ -85,7 +89,7 @@
             <div class="container">
                 <h2>Experience</h2>
                 <!-- Add experience cards here -->
-                <div class="card mb-3">
+                <div class="card mb-3" data-aos="fade-up">
                     <div class="card-body">
                         <h5 class="card-title">Security Engineer Lead (Application) at a Fortune 500 Global Engineering Provider</h5>
                         <p class="card-text">Cybersecurity | Snyk (SAST) | Rapid7 (DAST) | Contrast-Assess (IAST) | Open Source Scanning (Mend) | Vulnerability Scanning (Tenable Nessus) | SonarQube (SCA) | MFA & Access Keys | Pen Testing | Crowdstrike (Intrusion Detection) | Deprecated OS | Container Critical/Top Issues | Incident Management | Security Release Review | AWS | Azure | DevOps | Threat Modeling | OWASP Top 10 | CWE 25 | Risk Score Management | Mentoring | Manage App Security | Reporting</p>
@@ -123,7 +127,7 @@
     </main>
 
     <!-- Version -->
-    <div class="version">Version: 1.0.9</div>
+    <div class="version">Version: 1.0.10</div>
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
