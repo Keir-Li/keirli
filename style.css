@@ -81,32 +81,3 @@ body {
 .content.active {
     display: block;
 }
-
-
-@keyframes slide-down {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-
-.card-deck {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card {
-    background-color: #f2f2f2;
-    border-radius: 5px;
-    padding: 20px;
-    margin: 10px;
-}
-
-/* Show active content */
-.content.active {
-    display: block;
-}
