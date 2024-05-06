@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V1.2</title>
+    <title>V1.3</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -34,31 +34,31 @@
     </div>
 </section>
 
-<section id="experience-content" class="content">
-    <div class="container">
-        <h2>My Experience</h2>
-        <div class="card-deck">
-            <!-- Add cards for each position -->
-            <div class="card">Position 1</div>
-            <div class="card">Position 2</div>
-            <div class="card">Position 3</div>
-            <div class="card">Position 4</div>
+<section id="intro" class="jumbotron">
+    <video autoplay muted loop id="background-video">
+        <source src="6330771-hd_1920_1080_30fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="buttons">
+        <button id="intro-btn" class="active">My Intro</button>
+        <button id="experience-btn">My Experience</button>
+        <button id="skills-btn">My Skills</button>
+        <button id="contact-btn">My Contact</button>
+    </div>
+    <div id="intro-content" class="content active">
+        <div class="container">
+            <h2>My Intro</h2>
+            <p>Add your introduction here...</p>
         </div>
     </div>
-</section>
 
-<section id="skills-content" class="content">
-    <div class="container">
-        <h2>My Skills</h2>
-        <!-- Add skill icons or showcase -->
+     <div id="experience-content" class="content active">
+        <div class="container">
+            <h2>My Experience</h2>
+            <p>Add your introduction here...</p>
+        </div>
     </div>
-</section>
-
-<section id="contact-content" class="content">
-    <div class="container">
-        <h2>My Contact</h2>
-        <p>Add your contact information here...</p>
-    </div>
+    <!-- Add other content sections similarly -->
 </section>
 
 <!-- Bootstrap JavaScript -->
