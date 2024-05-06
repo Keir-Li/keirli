@@ -1,4 +1,10 @@
 /* General styles */
+
+body, html {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default paddings */
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
