@@ -1,4 +1,4 @@
-// Script to toggle content based on button clicks
+// Script to toggle content based on button clicks with slide-down animation
 document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll(".buttons button");
     const contents = document.querySelectorAll(".content");
