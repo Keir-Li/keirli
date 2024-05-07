@@ -122,7 +122,7 @@ body {
 /* Animated text styles */
 .animated-text {
   position: fixed;
-  bottom: 60px; /* Adjust the position to sit just above the bottom bar */
+  bottom: calc(50vh + 30px); /* Places the text and finger just above the bottom bar */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
