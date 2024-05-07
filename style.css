@@ -138,8 +138,11 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center; /* Center the background image */
-  position: relative;
-  top: 10px; /* Adjust vertical position */
+  position: absolute;
+  bottom: -80px; /* Adjust the distance from the bottom of the animated-text div */
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 1s infinite alternate; /* Example animation */
 }
 
 /* Typing animation for introduction text */
