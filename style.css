@@ -117,17 +117,17 @@ body {
 /* Animated text styles */
 .animated-text {
   position: fixed;
-  bottom: 50px; /* Adjust as needed */
+  bottom: 10vh; /* Adjust as needed */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   z-index: 3;
+  animation: moveText 1s infinite alternate; /* Animation for moving text */
 }
 
 .message {
   font-size: 20px;
   color: white;
-  margin-bottom: 20px; /* Add spacing between text and finger */
 }
 
 .finger {
@@ -137,7 +137,9 @@ body {
   background-image: url('hand-finger-pointing-down.png'); /* Replace 'finger.png' with your finger image */
   background-size: contain;
   background-repeat: no-repeat;
-  animation: bounce 1s infinite alternate;
+  background-position: center; /* Center the background image */
+  position: relative;
+  top: 10px; /* Adjust vertical position */
 }
 
 /* Typing animation for introduction text */
