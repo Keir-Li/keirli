@@ -37,19 +37,38 @@ body {
     object-fit: cover;
 }
 
+/* Dark bar styles */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background color */
+  padding: 10px 0; /* Adjust padding as needed */
+  z-index: 3; /* Ensure it's above other elements */
+}
+
+/* Button styles */
 .buttons {
-    position: absolute;
-    bottom: 20px; /* Adjust bottom spacing as needed */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px; /* Adjust bottom spacing as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
 .button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 16px;
-    cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 15px 30px; /* Adjust padding for bigger buttons */
+  margin: 0 20px; /* Adjust margin for better spacing */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 10px; /* Add border radius for rounded corners */
+  font-size: 18px; /* Increase font size for better visibility */
 }
 
 .buttons button {
@@ -64,12 +83,12 @@ body {
     font-size: 18px; /* Increase font size for better visibility */
 }
 
-.buttons button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Lighten background color on hover */
 }
 
-.buttons button.active {
-    background-color: rgba(0, 0, 0, 0.7);
+.button.active {
+  background-color: rgba(255, 255, 255, 0.2); /* Light background color for active button */
 }
 
 /* Content section styles */
@@ -91,24 +110,25 @@ body {
     display: block;
 }
 
+/* Animated text styles */
 .animated-text {
   position: fixed;
-  bottom: 20px;
+  bottom: 70px; /* Adjust positioning */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  animation: bounce 1s infinite alternate; /* Example animation */
+  z-index: 3; /* Ensure it's above other elements */
 }
 
 .message {
-  font-size: 18px;
-  color: #333;
+  font-size: 20px; /* Increase font size for better visibility */
+  color: white;
 }
 
 .finger {
   width: 30px;
   height: 50px;
-  background-image: url('finger.png'); /* Replace 'finger.png' with your finger image */
+  background-image: url('hand-finger-pointing-down.png'); /* Replace 'finger.png' with your finger image */
   background-size: contain;
   background-repeat: no-repeat;
   animation: bounce 1s infinite alternate; /* Example animation */
