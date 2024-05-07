@@ -122,9 +122,9 @@ body {
 /* Animated text styles */
 .animated-text {
   position: fixed;
-  bottom: calc(50vh + 30px); /* Places the text and finger just above the bottom bar */
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   z-index: 3;
 }
@@ -132,7 +132,7 @@ body {
 .message {
   font-size: 20px;
   color: white;
-  margin-bottom: 10px; /* Add spacing between text and finger */
+  margin-bottom: 20px; /* Add spacing between text and finger */
 }
 
 .finger {
@@ -142,7 +142,6 @@ body {
   background-image: url('hand-finger-pointing-down.png'); /* Replace 'finger.png' with your finger image */
   background-size: contain;
   background-repeat: no-repeat;
-  margin-top: 10px; /* Add spacing between text and finger */
   animation: bounce 1s infinite alternate;
 }
 
