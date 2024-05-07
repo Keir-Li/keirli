@@ -123,17 +123,13 @@ body {
 .animated-text {
   margin-top: 20px; /* Add margin between the introduction text and animated text */
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 2; /* Ensure it's above other elements except the bottom bar */
   animation: moveText 1s infinite alternate; /* Add animation */
 }
 
 .message {
   font-size: 20px; /* Increase font size for better visibility */
   color: white;
+  margin-bottom: 10px; /* Add margin to separate it from the finger */
 }
 
 .finger {
@@ -142,16 +138,17 @@ body {
   background-image: url('hand-finger-pointing-down.png'); /* Replace 'finger.png' with your finger image */
   background-size: contain;
   background-repeat: no-repeat;
-  margin-top: 10px; /* Add margin to separate it from the text */
   position: relative; /* Ensure finger's position is relative to the text */
-  left: -50%; /* Position finger center under the text */
   animation: bounce 1s infinite alternate; /* Add animation */
 }
 
 /* Hide the text and finger when a button is clicked */
-.text-hidden,
-.finger-hidden {
+.text-hidden {
   display: none;
+}
+
+.finger-hidden {
+  visibility: hidden;
 }
 
 @keyframes moveText {
