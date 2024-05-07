@@ -156,6 +156,11 @@ body {
   overflow: hidden; /* Ensures text doesn't overflow */
   white-space: nowrap; /* Prevents wrapping */
   margin: 0 auto; /* Center text */
+    font-size: 48px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    font-family: Poppins, sans-serif;
+    color: white;
 }
 
 .intro-header span {
@@ -163,13 +168,30 @@ body {
   animation: typing 4s steps(40, end); /* Adjust timing as needed */
 }
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+/* Hide the border when animation is complete */
+.intro-header span::after {
+  content: "";
+  display: inline-block;
+  width: 0; /* Set width to 0 to hide the border */
+}
+
+/* Typing animation for introduction text */
+.intro-subheader {
+  overflow: hidden; /* Ensures text doesn't overflow */
+  white-space: nowrap; /* Prevents wrapping */
+  margin: 0 auto; /* Center text */
+  font-size: 24px;
+  color: white;
+  font-family: Poppins, sans-serif;
+}
+
+.intro-subheader span {
+  border-right: .15em solid white; /* Typing cursor effect */
+  animation: typing 4s steps(40, end); /* Adjust timing as needed */
 }
 
 /* Hide the border when animation is complete */
-.intro-header span::after {
+.intro-subheader span::after {
   content: "";
   display: inline-block;
   width: 0; /* Set width to 0 to hide the border */
@@ -182,6 +204,11 @@ body {
 
 .finger-hidden {
   visibility: hidden;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
 @keyframes moveText {
