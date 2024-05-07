@@ -1,7 +1,5 @@
-It seems the issue is related to the animation of the introduction subheader. Let's refine the CSS animation and ensure that all elements are properly displayed. Here's the corrected CSS code:
-
-```css
 /* General styles */
+
 body, html {
     margin: 0; /* Remove default margins */
     padding: 0; /* Remove default paddings */
@@ -41,31 +39,31 @@ body {
 
 /* Dark bar styles */
 .bottom-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(25, 25, 26, .91); /* Dark background color */
-    padding: 10px 0; /* Adjust padding as needed */
-    z-index: 3; /* Ensure it's above other elements */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(25, 25, 26, .91); /* Dark background color */
+  padding: 10px 0; /* Adjust padding as needed */
+  z-index: 3; /* Ensure it's above other elements */
 }
 
 .buttons {
-    display: flex;
-    justify-content: center;
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+  display: flex;
+  justify-content: center;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 .button {
-    background-color: transparent;
-    color: white;
-    border: none;
-    padding: 15px 30px; /* Adjust padding for bigger buttons */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    border-radius: 10px; /* Add border radius for rounded corners */
-    font-size: 18px; /* Increase font size for better visibility */
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 15px 30px; /* Adjust padding for bigger buttons */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 10px; /* Add border radius for rounded corners */
+  font-size: 18px; /* Increase font size for better visibility */
 }
 
 .buttons button {
@@ -81,11 +79,11 @@ body {
 }
 
 .button:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Lighten background color on hover */
+  background-color: rgba(255, 255, 255, 0.2); /* Lighten background color on hover */
 }
 
 .button.active {
-    background-color: rgba(255, 255, 255, 0.2); /* Light background color for active button */
+  background-color: rgba(255, 255, 255, 0.2); /* Light background color for active button */
 }
 
 /* Content section styles */
@@ -106,66 +104,66 @@ body {
 
 /* Adjust the styles for the introduction text and animated text */
 .introduction {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 /* Animated text styles */
 .animated-text {
-    position: fixed;
-    bottom: -25vh; /* Adjust as needed */
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 3;
-    animation: moveText 1s infinite alternate; /* Animation for moving text */
+  position: fixed;
+  bottom: -25vh; /* Adjust as needed */
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 3;
+  animation: moveText 1s infinite alternate; /* Animation for moving text */
 }
 
 .message {
-    font-size: 20px;
-    color: white;
+  font-size: 20px;
+  color: white;
 }
 
 .finger {
-    width: 30px;
-    height: 50px;
-    filter: brightness(0) invert(1);
-    background-image: url('hand-finger-pointing-down.png'); /* Replace 'finger.png' with your finger image */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; /* Center the background image */
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: bounce 1s infinite alternate; /* Example animation */
+  width: 30px;
+  height: 50px;
+  filter: brightness(0) invert(1);
+  background-image: url('hand-finger-pointing-down.png'); /* Replace 'finger.png' with your finger image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; /* Center the background image */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 1s infinite alternate; /* Example animation */
 }
 
 /* Typing animation for introduction text */
 .intro-text {
-    font-size: 24px;
-    color: white;
-    overflow: hidden; /* Ensures text doesn't overflow */
-    white-space: nowrap; /* Prevents wrapping */
-    margin: 0 auto; /* Center text */
-    animation: typing 4s steps(40, end), removeBorder 4s step-end; /* Add removeBorder animation */
+  font-size: 24px;
+  color: white;
+  overflow: hidden; /* Ensures text doesn't overflow */
+  white-space: nowrap; /* Prevents wrapping */
+  margin: 0 auto; /* Center text */
+  animation: typing 4s steps(40, end), removeBorder 4s step-end; /* Add removeBorder animation */
 }
 
 /* Hide the border when animation is complete */
 .intro-text::after {
-    content: "";
-    border-right: 0px;
-    display: inline-block;
-    width: 0; /* Set width to 0 to hide the border */
+  content: "";
+  border-right: 0px;
+  display: inline-block;
+  width: 0; /* Set width to 0 to hide the border */
 }
 
 /* Typing animation for introduction text */
 .intro-header {
-    overflow: hidden; /* Ensures text doesn't overflow */
-    white-space: nowrap; /* Prevents wrapping */
-    margin: 0 auto; /* Center text */
+  overflow: hidden; /* Ensures text doesn't overflow */
+  white-space: nowrap; /* Prevents wrapping */
+  margin: 0 auto; /* Center text */
     font-size: 48px;
     font-weight: 700;
     padding-bottom: 10px;
@@ -174,21 +172,70 @@ body {
 }
 
 .intro-header span {
-    border-right: .15em solid white; /* Typing cursor effect */
-    animation: typing 4s steps(40, end); /* Adjust timing as needed */
+  border-right: .15em solid white; /* Typing cursor effect */
+  animation: typing 4s steps(40, end); /* Adjust timing as needed */
 }
 
 /* Hide the border when animation is complete */
 .intro-header span::after {
-    content: "";
-    border-right: 0px;
-    display: inline-block;
-    width: 0; /* Set width to 0 to hide the border */
+  content: "";
+  border-right: 0px;
+  display: inline-block;
+  width: 0; /* Set width to 0 to hide the border */
 }
 
 /* Typing animation for introduction text */
 .intro-subheader {
-    overflow: hidden; /* Ensures text doesn't overflow */
-    white-space: pre-line; /* Preserve line breaks */
-    margin: 0 auto; /* Center text */
-    font-size
+  overflow: hidden; /* Ensures text doesn't overflow */
+  white-space: nowrap; /* Prevents wrapping */
+  margin: 0 auto; /* Center text */
+  font-size: 24px;
+  color: white;
+  font-family: Poppins, sans-serif;
+}
+
+.intro-subheader span {
+  border-right: .15em solid white; /* Typing cursor effect */
+  animation: typing 4s steps(40, end); /* Adjust timing as needed */
+}
+
+/* Hide the border when animation is complete */
+.intro-subheader span::after {
+  content: "";
+  border-right: 0px;
+  display: inline-block;
+  width: 0; /* Set width to 0 to hide the border */
+}
+
+/* Hide the text and finger when a button is clicked */
+.text-hidden {
+  display: none;
+}
+
+.finger-hidden {
+  visibility: hidden;
+}
+
+/* Keyframes to remove border at the end of typing animation */
+@keyframes removeBorder {
+  from, to { border-right: .15em solid white; }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes moveText {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(5px); /* Adjust distance and direction of movement */
+  }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(5px); }
+}
