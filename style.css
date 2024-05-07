@@ -197,6 +197,7 @@ body {
 .intro-subheader span {
   border-right: .15em solid white; /* Typing cursor effect */
   animation: typing 4s steps(40, end); /* Adjust timing as needed */
+  display: none;
 }
 
 /* Hide the border when animation is complete */
@@ -214,6 +215,28 @@ body {
 
 .finger-hidden {
   visibility: hidden;
+}
+
+@keyframes reveal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#check1, #check2, #check3 {
+    animation: reveal 1s forwards;
+    animation-delay: 3s; /* Delay for the checkbox emojis */
+}
+
+#check1 {
+    animation-delay: 4s;
+}
+
+#check2 {
+    animation-delay: 5s;
+}
+
+#check3 {
+    animation-delay: 6s;
 }
 
 /* Keyframes to remove border at the end of typing animation */
