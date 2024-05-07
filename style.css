@@ -105,9 +105,24 @@ body {
     display: block;
 }
 
+/* Adjust the styles for the introduction text and animated text */
+.introduction {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.intro-text {
+  font-size: 24px;
+  color: white;
+}
+
 /* Animated text styles */
 .animated-text {
-  position: absolute;
+  margin-top: 20px; /* Add margin between the introduction text and animated text */
+  position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -152,4 +167,3 @@ body {
   0% { transform: translateY(0); }
   100% { transform: translateY(5px); }
 }
-
