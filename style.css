@@ -127,19 +127,26 @@ body {
 }
 
 .message {
-  font-size: 20px; /* Increase font size for better visibility */
+  font-size: 20px;
   color: white;
-  margin-bottom: 10px; /* Add margin to separate it from the finger */
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Align items horizontally */
 }
 
 .finger {
   width: 30px;
   height: 50px;
+  filter: brightness(0) invert(1);
   background-image: url('hand-finger-pointing-down.png'); /* Replace 'finger.png' with your finger image */
   background-size: contain;
   background-repeat: no-repeat;
-  position: relative; /* Ensure finger's position is relative to the text */
-  animation: bounce 1s infinite alternate; /* Add animation */
+  position: absolute;
+  bottom: -40px; /* Adjust the position to align it underneath the text */
+  left: 50%; /* Position it in the middle */
+  transform: translateX(-50%); /* Center horizontally */
+  animation: bounce 1s infinite alternate;
 }
 
 /* Hide the text and finger when a button is clicked */
