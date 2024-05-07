@@ -6,4 +6,8 @@ function showContent(sectionId) {
     const contents = document.querySelectorAll('.content');
     contents.forEach(content => content.classList.remove('active'));
     document.getElementById(sectionId + '-content').classList.add('active');
+
+    // Hide the animated text and finger when a button is clicked
+    document.querySelector('.animated-text').classList.add('text-hidden');
+    document.querySelector('.finger').classList.add('finger-hidden');
 }
