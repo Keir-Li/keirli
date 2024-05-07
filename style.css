@@ -50,7 +50,7 @@ body {
 
 .buttons {
   display: flex;
-  justify-content: space-evenly; /* Adjust spacing between buttons */
+  justify-content: center;
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
 }
