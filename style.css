@@ -117,9 +117,9 @@ body {
 /* Animated text styles */
 .animated-text {
   position: fixed;
-  bottom: 10vh; /* Adjust as needed */
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: -30vh; /* Adjust as needed */
+  left: 0;
+  right: 0;
   text-align: center;
   z-index: 3;
   animation: moveText 1s infinite alternate; /* Animation for moving text */
