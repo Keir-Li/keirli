@@ -48,7 +48,6 @@ body {
   z-index: 3; /* Ensure it's above other elements */
 }
 
-/* Button styles */
 .buttons {
   display: flex;
   justify-content: space-evenly; /* Adjust spacing between buttons */
@@ -109,12 +108,11 @@ body {
 /* Animated text styles */
 .animated-text {
   position: fixed;
-  bottom: 20px; /* Adjust positioning */
+  bottom: calc(50% + 20px); /* Adjust positioning to sit in the bottom half of the screen */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
-  z-index: 3; /* Ensure it's above other elements */
-  animation: moveText 1s infinite alternate; /* Animation for moving text */
+  z-index: 2; /* Ensure it's above other elements except the bottom bar */
 }
 
 .message {
@@ -125,11 +123,10 @@ body {
 .finger {
   width: 30px;
   height: 50px;
-  margin-top: 10px; /* Adjust as needed */
   background-image: url('hand-finger-pointing-down.png'); /* Replace 'finger.png' with your finger image */
   background-size: contain;
   background-repeat: no-repeat;
-  animation: bounce 1s infinite alternate; /* Example animation */
+  margin-top: 10px; /* Add margin to separate it from the text */
 }
 
 @keyframes bounce {
