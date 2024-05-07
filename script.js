@@ -11,4 +11,8 @@ function showContent(sectionId) {
     document.querySelector('.animated-text').classList.add('text-hidden');
     document.querySelector('.finger').classList.add('finger-hidden');
     document.querySelector('.intro-text').classList.add('text-hidden');
+    document.querySelector('.intro-header').classList.add('text-hidden');   
+    document.querySelector('.intro-subheader').classList.add('text-hidden');   
+
+    
 }
