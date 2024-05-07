@@ -24,6 +24,7 @@ body {
     color: white;
     text-align: center;
     margin: 0; /* Remove default margins */
+    margin-bottom: 0px;
     padding: 0; /* Remove default paddings */
 }
 
