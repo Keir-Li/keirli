@@ -149,10 +149,17 @@ body {
   font-size: 24px;
   color: white;
   overflow: hidden; /* Ensures text doesn't overflow */
-  border-right: .15em solid white; /* Typing cursor effect */
   white-space: nowrap; /* Prevents wrapping */
   margin: 0 auto; /* Center text */
-  animation: typing 4s steps(40, end); /* Adjust timing as needed */
+  animation: typing 4s steps(40, end), removeBorder 4s step-end; /* Add removeBorder animation */
+}
+
+/* Hide the border when animation is complete */
+.intro-text::after {
+  content: "";
+  border-right: 0px;
+  display: inline-block;
+  width: 0; /* Set width to 0 to hide the border */
 }
 
 /* Typing animation for introduction text */
@@ -210,6 +217,11 @@ body {
 
 .finger-hidden {
   visibility: hidden;
+}
+
+/* Keyframes to remove border at the end of typing animation */
+@keyframes removeBorder {
+  from, to { border-right: .15em solid white; }
 }
 
 @keyframes typing {
