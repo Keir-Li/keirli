@@ -13,6 +13,4 @@ function showContent(sectionId) {
     document.querySelector('.intro-text').classList.add('text-hidden');
     document.querySelector('.intro-header').classList.add('text-hidden');   
     document.querySelector('.intro-subheader').classList.add('text-hidden');   
-
-    
 }
