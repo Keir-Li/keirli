@@ -43,7 +43,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(25, 25, 26, 0.91); /* Dark background color */
+  background-color: rgba(25, 25, 26, .91); /* Dark background color */
   padding: 10px 0; /* Adjust padding as needed */
   z-index: 3; /* Ensure it's above other elements */
 }
@@ -52,7 +52,8 @@ body {
 .buttons {
   display: flex;
   justify-content: space-evenly; /* Adjust spacing between buttons */
-  margin-bottom: 10px; /* Add some space between buttons and text */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
 .button {
@@ -124,6 +125,7 @@ body {
 .finger {
   width: 30px;
   height: 50px;
+  margin-top: 10px; /* Adjust as needed */
   background-image: url('hand-finger-pointing-down.png'); /* Replace 'finger.png' with your finger image */
   background-size: contain;
   background-repeat: no-repeat;
