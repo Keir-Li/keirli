@@ -13,4 +13,13 @@ function showContent(sectionId) {
     document.querySelector('.intro-text').classList.add('text-hidden');
     document.querySelector('.intro-header').classList.add('text-hidden');   
     document.querySelector('.intro-subheader').classList.add('text-hidden');   
+
+    // If the 'My Intro' button is clicked, reset the page to its initial state
+    if (sectionId === 'intro') {
+        document.querySelector('.animated-text').classList.remove('text-hidden');
+        document.querySelector('.finger').classList.remove('finger-hidden');
+        document.querySelector('.intro-text').classList.remove('text-hidden');
+        document.querySelector('.intro-header').classList.remove('text-hidden');   
+        document.querySelector('.intro-subheader').classList.remove('text-hidden');   
+    }
 }
