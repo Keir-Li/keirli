@@ -151,33 +151,28 @@ body {
   animation: typing 4s steps(40, end); /* Adjust timing as needed */
 }
 
+/* Typing animation for introduction text */
 .intro-header {
-  font-size: 48px;
-  font-weight: 700;
-  padding-bottom: 10px;
-  font-family: Poppins, sans-serif;
-  color: white;
   overflow: hidden; /* Ensures text doesn't overflow */
-  border-right: .15em solid white; /* Typing cursor effect */
   white-space: nowrap; /* Prevents wrapping */
   margin: 0 auto; /* Center text */
-  animation: typing 4s steps(40, end); /* Adjust timing as needed */
 }
 
-.intro-subheader {
-  font-size: 24px;
-  color: white;
-  font-family: Poppins, sans-serif;
-  overflow: hidden; /* Ensures text doesn't overflow */
+.intro-header span {
   border-right: .15em solid white; /* Typing cursor effect */
-  white-space: nowrap; /* Prevents wrapping */
-  margin: 0 auto; /* Center text */
   animation: typing 4s steps(40, end); /* Adjust timing as needed */
 }
 
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
+}
+
+/* Hide the border when animation is complete */
+.intro-header span::after {
+  content: "";
+  display: inline-block;
+  width: 0; /* Set width to 0 to hide the border */
 }
 
 /* Hide the text and finger when a button is clicked */
