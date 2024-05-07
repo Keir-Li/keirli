@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V1.7</title>
+    <title>V1.8</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -16,28 +16,30 @@
         Your browser does not support the video tag.
     </video>
 
-<!-- Add the dark bottom bar and adjust the position of the animated text and finger -->
+<!-- Adjust the position of the animated text and finger -->
+<div class="animated-text">
+  <div class="message">Click the buttons below. Take a look at my CV.</div>
+  <div class="finger"></div>
+</div>
+
+<!-- Bottom bar -->
 <div class="bottom-bar">
   <!-- Button group -->
   <div class="buttons">
-    <button id="intro-btn" class="button active" onclick="showContent('intro')">My Intro</button>
+    <button id="intro-btn" class="button" onclick="showContent('intro')">My Intro</button>
     <button id="experience-btn" class="button" onclick="showContent('experience')">My Experience</button>
     <button id="skills-btn" class="button" onclick="showContent('skills')">My Skills</button>
     <button id="contact-btn" class="button" onclick="showContent('contact')">My Contact</button>
   </div>
-
-  <!-- Animated text and finger -->
-  <div class="animated-text">
-    <div class="message">Click the buttons below. Take a look at my CV.</div>
-    <div class="finger"></div>
-  </div>
 </div>
 
-    <div id="intro-content" class="content active">
-        <div class="container">
-            <h2>My Intro</h2>
-            <p>Add your introduction here...</p>
-        </div>
+
+    <!-- Content sections -->
+    <div id="intro-content" class="content">
+      <div class="container">
+        <h2>My Intro</h2>
+        <p>Add your introduction here...</p>
+      </div>
     </div>
 
     <div id="experience-content" class="content">
