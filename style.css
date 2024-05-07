@@ -171,6 +171,7 @@ body {
 /* Hide the border when animation is complete */
 .intro-header span::after {
   content: "";
+  border-right: 0px;
   display: inline-block;
   width: 0; /* Set width to 0 to hide the border */
 }
@@ -193,6 +194,7 @@ body {
 /* Hide the border when animation is complete */
 .intro-subheader span::after {
   content: "";
+  border-right: 0px;
   display: inline-block;
   width: 0; /* Set width to 0 to hide the border */
 }
