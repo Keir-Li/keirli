@@ -43,7 +43,7 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Dark background color */
+  background-color: rgba(25, 25, 26, 0.91); /* Dark background color */
   padding: 10px 0; /* Adjust padding as needed */
   z-index: 3; /* Ensure it's above other elements */
 }
@@ -51,12 +51,8 @@ body {
 /* Button styles */
 .buttons {
   display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 20px; /* Adjust bottom spacing as needed */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
+  justify-content: space-evenly; /* Adjust spacing between buttons */
+  margin-bottom: 10px; /* Add some space between buttons and text */
 }
 
 .button {
@@ -64,7 +60,6 @@ body {
   color: white;
   border: none;
   padding: 15px 30px; /* Adjust padding for bigger buttons */
-  margin: 0 20px; /* Adjust margin for better spacing */
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 10px; /* Add border radius for rounded corners */
@@ -113,11 +108,12 @@ body {
 /* Animated text styles */
 .animated-text {
   position: fixed;
-  bottom: 70px; /* Adjust positioning */
+  bottom: 20px; /* Adjust positioning */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   z-index: 3; /* Ensure it's above other elements */
+  animation: moveText 1s infinite alternate; /* Animation for moving text */
 }
 
 .message {
@@ -137,5 +133,14 @@ body {
 @keyframes bounce {
   0% { transform: translateY(0); }
   100% { transform: translateY(5px); }
+}
+
+@keyframes moveText {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(5px); /* Adjust distance and direction of movement */
+  }
 }
 
