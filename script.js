@@ -10,4 +10,5 @@ function showContent(sectionId) {
     // Hide the animated text and finger when a button is clicked
     document.querySelector('.animated-text').classList.add('text-hidden');
     document.querySelector('.finger').classList.add('finger-hidden');
+    document.querySelector('.intro-text').classList.add('text-hidden');
 }
