@@ -122,9 +122,9 @@ body {
 /* Animated text styles */
 .animated-text {
   position: fixed;
-  top: 50%;
+  bottom: 50px; /* Adjust as needed */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   text-align: center;
   z-index: 3;
 }
@@ -143,6 +143,20 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   animation: bounce 1s infinite alternate;
+}
+
+/* Typing animation for introduction text */
+.typewriter-text {
+  overflow: hidden; /* Ensures text doesn't overflow */
+  border-right: .15em solid white; /* Typing cursor effect */
+  white-space: nowrap; /* Prevents wrapping */
+  margin: 0 auto; /* Center text */
+  animation: typing 4s steps(40, end); /* Adjust timing as needed */
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
 /* Hide the text and finger when a button is clicked */
