@@ -117,7 +117,7 @@ body {
 /* Animated text styles */
 .animated-text {
   position: fixed;
-  bottom: -30vh; /* Adjust as needed */
+  bottom: -25vh; /* Adjust as needed */
   left: 0;
   right: 0;
   text-align: center;
@@ -139,7 +139,6 @@ body {
   background-repeat: no-repeat;
   background-position: center; /* Center the background image */
   position: absolute;
-  bottom: -80px; /* Adjust the distance from the bottom of the animated-text div */
   left: 50%;
   transform: translateX(-50%);
   animation: bounce 1s infinite alternate; /* Example animation */
