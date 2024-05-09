@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function() {
+
 // Function to open modal with full details
 function openModal(details) {
     const fullDetailsContent = document.querySelector(".modal-content");
@@ -108,3 +110,5 @@ navButtons.forEach(button => {
 window.onload = function() {
     showContent('intro');
 };
+
+});
