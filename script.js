@@ -65,7 +65,7 @@ function openIntroModal() {
 const modal = document.getElementById("fullDetailsModal");
 const closeBtn = document.getElementsByClassName("close")[0];
 
-// Add event listeners to each minimized card for hover
+// Add event listeners to each minimized card for hover and click
 const minimizedCards = document.querySelectorAll(".minimized-card");
 minimizedCards.forEach((card, index) => {
     card.addEventListener("mouseenter", () => {
@@ -108,3 +108,46 @@ window.addEventListener("click", (event) => {
         modal.style.display = "none";
     }
 });
+
+// Function to show content based on sectionId
+function showContent(sectionId) {
+    const buttons = document.querySelectorAll('.button');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    document.getElementById(sectionId + '-btn').classList.add('active');
+
+    const contents = document.querySelectorAll('.content');
+    contents.forEach(content => content.classList.remove('active'));
+    document.getElementById(sectionId + '-content').classList.add('active');
+
+    // Show or hide the intro text and animated text based on which section is active
+    if (sectionId === 'intro') {
+        document.querySelector('.animated-text').classList.remove('text-hidden');
+        document.querySelector('.finger').classList.remove('finger-hidden');
+        document.querySelector('.intro-text').classList.remove('text-hidden');
+        document.querySelector('.intro-header').classList.remove('text-hidden');   
+        document.querySelector('.intro-subheader').classList.remove('text-hidden');   
+
+        // Hide other sections
+        document.querySelectorAll('.content').forEach(content => {
+            if (content.id !== 'intro-content') {
+                content.classList.add('text-hidden');
+            }
+        });
+    } else {
+        document.querySelector('.animated-text').classList.add('text-hidden');
+        document.querySelector('.finger').classList.add('finger-hidden');
+
+        // Hide intro text and header
+        document.querySelector('.intro-text').classList.add('text-hidden');
+        document.querySelector('.intro-header').classList.add('text-hidden');   
+        document.querySelector('.intro-subheader').classList.add('text-hidden');   
+
+        // Show other sections
+        document.getElementById(sectionId + '-content').classList.remove('text-hidden');
+    }
+}
+
+// When the page loads, initially show the intro content
+window.onload = function() {
+    showContent('intro');
+};
