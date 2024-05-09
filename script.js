@@ -14,13 +14,22 @@ function typeWriter(textElement, text, delay) {
     typing();
 }
 
-// Get all elements with the class "typing-line" and apply typing animation
-const typingLines = document.querySelectorAll('.typing-line');
-typingLines.forEach((line, index) => {
-    // Delay calculation to make each line start after the previous one finishes
-    const delay = (index + 1) * 1000; // Adjust delay as needed
-    typeWriter(line, line.innerHTML, 50); // Adjust delay between characters as needed
-});
+// Typing animation for introduction text
+function startTextAnimation(i) {
+    const typingLines = document.querySelectorAll('.typing-line');
+    if (i < typingLines.length) {
+        const line = typingLines[i];
+        const text = line.innerHTML;
+        typeWriter(line, text, 50); // Adjust delay between characters as needed
+        setTimeout(function() {
+            startTextAnimation(i + 1);
+        }, (text.length * 50) + 1000); // Delay before starting the next line
+    }
+}
+
+// Start the animation
+startTextAnimation(0);
+
 
 
 function showContent(sectionId) {
