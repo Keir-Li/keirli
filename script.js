@@ -41,23 +41,6 @@ function openModal(details) {
     });
 }
 
-// Add event listener to close modal when mouse leaves modal
-modal.addEventListener("mouseleave", () => {
-    modal.style.display = "none";
-});
-
-// Close the modal when the user clicks on the close button
-document.querySelector(".close").addEventListener("click", () => {
-    modal.style.display = "none";
-});
-
-// Close the modal when the user clicks outside the modal
-window.addEventListener("click", function(event) {
-    if (event.target === document.getElementById("fullDetailsModal")) {
-        modal.style.display = "none";
-    }
-});
-
 // Open the modal when the "Learn more about me here" text is clicked or hovered over
 document.querySelector(".learn-more").addEventListener("mouseover", openIntroModal);
 document.querySelector(".learn-more").addEventListener("click", openIntroModal);
@@ -118,45 +101,3 @@ window.addEventListener("click", (event) => {
         modal.style.display = "none";
     }
 });
-
-function showContent(sectionId) {
-    const buttons = document.querySelectorAll('.button');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    document.getElementById(sectionId + '-btn').classList.add('active');
-
-    const contents = document.querySelectorAll('.content');
-    contents.forEach(content => content.classList.remove('active'));
-    document.getElementById(sectionId + '-content').classList.add('active');
-
-    // Show or hide the intro text and animated text based on which section is active
-    if (sectionId === 'intro') {
-        document.querySelector('.animated-text').classList.remove('text-hidden');
-        document.querySelector('.finger').classList.remove('finger-hidden');
-        document.querySelector('.intro-text').classList.remove('text-hidden');
-        document.querySelector('.intro-header').classList.remove('text-hidden');   
-        document.querySelector('.intro-subheader').classList.remove('text-hidden');   
-
-        // Hide other sections
-        document.querySelectorAll('.content').forEach(content => {
-            if (content.id !== 'intro-content') {
-                content.classList.add('text-hidden');
-            }
-        });
-    } else {
-        document.querySelector('.animated-text').classList.add('text-hidden');
-        document.querySelector('.finger').classList.add('finger-hidden');
-
-        // Hide intro text and header
-        document.querySelector('.intro-text').classList.add('text-hidden');
-        document.querySelector('.intro-header').classList.add('text-hidden');   
-        document.querySelector('.intro-subheader').classList.add('text-hidden');   
-
-        // Show other sections
-        document.getElementById(sectionId + '-content').classList.remove('text-hidden');
-    }
-}
-
-// When the page loads, initially show the intro content
-window.onload = function() {
-    showContent('intro');
-};
