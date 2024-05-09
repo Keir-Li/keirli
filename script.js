@@ -30,32 +30,45 @@ startTextAnimation();
 
 
 
-// Function to open the modal
-function openModal() {
-    document.getElementById('fullDetailsModal').style.display = 'block';
+function openModal(details) {
+    const fullDetailsContent = document.querySelector("#fullDetailsModal .modal-content");
+    // Populate the modal with details
+    fullDetailsContent.innerHTML = details;
+    // Display the modal
+    document.getElementById("fullDetailsModal").style.display = "block";
 }
 
 // Function to close the modal
 function closeModal() {
-    document.getElementById('fullDetailsModal').style.display = 'none';
+    document.getElementById("fullDetailsModal").style.display = "none";
 }
 
 // Open the modal when the "Learn more about me here" text is clicked
-document.querySelector('.learn-more').addEventListener('click', openModal);
-
-// Open the modal when the intro header is clicked
-document.querySelector('.intro-header').addEventListener('click', openModal);
+document.querySelector(".learn-more").addEventListener("click", function() {
+    const details = `
+        <h2>More about K</h2>
+        <ul>
+            <li>I'm a results-driven Security leader with a proven track record of success in multinational cybersecurity trust organisations.</li>
+            <li>✅ Proven track record of elevating performance excellence</li>
+            <li>✅ Delivering exceptional results</li>
+            <li>✅ Fostering positive relationships</li>
+            <li>✅ Adept in implementing cutting-edge solutions</li>
+            <li>✅ Contributing to digital resiliency</li>
+            <li>✅ Driving operational excellence in Security management</li>
+        </ul>
+    `;
+    openModal(details);
+});
 
 // Close the modal when the user clicks on the close button
-document.querySelector('.close').addEventListener('click', closeModal);
+document.querySelector(".close").addEventListener("click", closeModal);
 
 // Close the modal when the user clicks outside the modal
-window.addEventListener('click', function(event) {
-    if (event.target === document.getElementById('fullDetailsModal')) {
+window.addEventListener("click", function(event) {
+    if (event.target === document.getElementById("fullDetailsModal")) {
         closeModal();
     }
 });
-
 
 
 
