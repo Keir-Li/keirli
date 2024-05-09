@@ -78,12 +78,24 @@ function showContent(sectionId) {
         document.querySelector('.intro-text').classList.remove('text-hidden');
         document.querySelector('.intro-header').classList.remove('text-hidden');   
         document.querySelector('.intro-subheader').classList.remove('text-hidden');   
+
+        // Hide other sections
+        document.querySelectorAll('.content').forEach(content => {
+            if (content.id !== 'intro-content') {
+                content.classList.add('text-hidden');
+            }
+        });
     } else {
         document.querySelector('.animated-text').classList.add('text-hidden');
         document.querySelector('.finger').classList.add('finger-hidden');
+
+        // Hide intro text and header
         document.querySelector('.intro-text').classList.add('text-hidden');
         document.querySelector('.intro-header').classList.add('text-hidden');   
         document.querySelector('.intro-subheader').classList.add('text-hidden');   
+
+        // Show other sections
+        document.getElementById(sectionId + '-content').classList.remove('text-hidden');
     }
 }
 
@@ -91,6 +103,7 @@ function showContent(sectionId) {
 window.onload = function() {
     showContent('intro');
 };
+
 
 
 
