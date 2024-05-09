@@ -186,6 +186,10 @@ body {
 
 /* Typing animation for introduction text */
 .intro-subheader {
+  text-align: center;
+  max-width: 600px
+  padding: 20px
+  border: 1px solid transparent
   overflow: hidden; /* Ensures text doesn't overflow */
   white-space: nowrap; /* Prevents wrapping */
   margin: 0 auto; /* Center text */
@@ -214,6 +218,10 @@ body {
 
 .finger-hidden {
   visibility: hidden;
+}
+
+.bullet-points {
+    margin-bottom: 10px; /* Add space between bullet points and text */
 }
 
 /* Keyframes to remove border at the end of typing animation */
