@@ -15,20 +15,19 @@ function typeWriter(textElement, text, delay) {
 }
 
 // Typing animation for introduction text
-function startTextAnimation(i) {
+function startTextAnimation() {
     const typingLines = document.querySelectorAll('.typing-line');
-    if (i < typingLines.length) {
-        const line = typingLines[i];
+    typingLines.forEach((line, index) => {
         const text = line.innerHTML;
-        typeWriter(line, text, 50); // Adjust delay between characters as needed
-        setTimeout(function() {
-            startTextAnimation(i + 1);
-        }, (text.length * 50) + 1000); // Delay before starting the next line
-    }
+        setTimeout(() => {
+            typeWriter(line, text, 50); // Adjust delay between characters as needed
+        }, index * 3000); // Delay before typing each line
+    });
 }
 
 // Start the animation
-startTextAnimation(0);
+startTextAnimation();
+
 
 
 
