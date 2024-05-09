@@ -30,6 +30,25 @@ startTextAnimation();
 
 
 
+// Open the modal when the "Learn more about me here" text is clicked
+document.querySelector('.learn-more').addEventListener('click', function() {
+    document.getElementById('fullDetailsModal').style.display = 'block';
+});
+
+// Close the modal when the user clicks on the close button
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('fullDetailsModal').style.display = 'none';
+});
+
+// Close the modal when the user clicks outside the modal
+window.addEventListener('click', function(event) {
+    if (event.target === document.getElementById('fullDetailsModal')) {
+        document.getElementById('fullDetailsModal').style.display = 'none';
+    }
+});
+
+
+
 
 
 function showContent(sectionId) {
