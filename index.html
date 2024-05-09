@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V2.8</title>
+    <title>V2.9</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -140,7 +140,26 @@
     <div id="skills-content" class="content">
         <div class="container">
             <h2>My Skills</h2>
-            <p>Add your introduction here...</p>
+            <div class="card-deck pb-3">
+    <div class="card border-0 shadow">
+        <div class="card-body text-center">
+            <picture>
+                <!-- Modern browsers will substitute the first image that matches -->
+                <source srcset="engineeringicon.png" media="(min-width: 1280px)">
+                <source srcset="engineeringicon.png" media="(min-width: 800px)">
+                <source srcset="engineeringicon.png" media="(min-width: 480px)">
+                <source srcset="engineeringicon.png" media="(min-width: 320px)">
+                <source srcset="engineeringicon.png">
+                <!-- Older browsers will show this mandatory element -->
+                <img src="engineeringicon.png" class="mx-auto d-block mb-3" alt="Engineer3">
+            </picture>
+            <div class="text-muted">This is some text.</div>
+        </div>
+        <div class="card-footer">
+            <a class="btn btn-pod btn-block stretched-link" href="test">Fortune 500 Global Engineering Provider</a>
+        </div>
+    </div>
+    </div>
         </div>
     </div>
     
