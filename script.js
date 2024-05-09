@@ -1,3 +1,28 @@
+// Typing animation function
+function typeWriter(textElement, text, delay) {
+    const textArray = text.split('');
+    let index = 0;
+
+    function typing() {
+        if (index < textArray.length) {
+            textElement.innerHTML += textArray[index];
+            index++;
+            setTimeout(typing, delay);
+        }
+    }
+
+    typing();
+}
+
+// Get all elements with the class "typing-line" and apply typing animation
+const typingLines = document.querySelectorAll('.typing-line');
+typingLines.forEach((line, index) => {
+    // Delay calculation to make each line start after the previous one finishes
+    const delay = (index + 1) * 1000; // Adjust delay as needed
+    typeWriter(line, line.innerHTML, 50); // Adjust delay between characters as needed
+});
+
+
 function showContent(sectionId) {
     const buttons = document.querySelectorAll('.button');
     buttons.forEach(btn => btn.classList.remove('active'));
