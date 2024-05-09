@@ -61,10 +61,10 @@ function openModal(details) {
     modal.style.display = "block";
 }
 
-// Add event listeners to each minimized card
+// Add event listeners to each minimized card for hover
 const minimizedCards = document.querySelectorAll(".minimized-card");
 minimizedCards.forEach((card, index) => {
-    card.addEventListener("click", () => {
+    card.addEventListener("mouseenter", () => {
         // Simulate getting full details data (replace with your data)
         const fullDetails = `
             <h2>Security Engineer</h2>
@@ -76,6 +76,13 @@ minimizedCards.forEach((card, index) => {
             </ul>
         `;
         openModal(fullDetails);
+    });
+});
+
+// Close the modal when the user moves the mouse out of the card
+minimizedCards.forEach((card, index) => {
+    card.addEventListener("mouseleave", () => {
+        modal.style.display = "none";
     });
 });
 
