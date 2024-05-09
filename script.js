@@ -30,22 +30,32 @@ startTextAnimation();
 
 
 
-// Open the modal when the "Learn more about me here" text is clicked
-document.querySelector('.learn-more').addEventListener('click', function() {
+// Function to open the modal
+function openModal() {
     document.getElementById('fullDetailsModal').style.display = 'block';
-});
+}
+
+// Function to close the modal
+function closeModal() {
+    document.getElementById('fullDetailsModal').style.display = 'none';
+}
+
+// Open the modal when the "Learn more about me here" text is clicked
+document.querySelector('.learn-more').addEventListener('click', openModal);
+
+// Open the modal when the intro header is clicked
+document.querySelector('.intro-header').addEventListener('click', openModal);
 
 // Close the modal when the user clicks on the close button
-document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById('fullDetailsModal').style.display = 'none';
-});
+document.querySelector('.close').addEventListener('click', closeModal);
 
 // Close the modal when the user clicks outside the modal
 window.addEventListener('click', function(event) {
     if (event.target === document.getElementById('fullDetailsModal')) {
-        document.getElementById('fullDetailsModal').style.display = 'none';
+        closeModal();
     }
 });
+
 
 
 
