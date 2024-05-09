@@ -32,6 +32,7 @@ startTextAnimation(0);
 
 
 
+
 function showContent(sectionId) {
     const buttons = document.querySelectorAll('.button');
     buttons.forEach(btn => btn.classList.remove('active'));
