@@ -87,6 +87,12 @@ function showContent(sectionId) {
     }
 }
 
+// When the page loads, initially show the intro content
+window.onload = function() {
+    showContent('intro');
+};
+
+
 
 // Get the modal and the close button
 const modal = document.getElementById("fullDetailsModal");
