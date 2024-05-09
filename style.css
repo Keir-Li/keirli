@@ -187,9 +187,9 @@ body {
 /* Typing animation for introduction text */
 .intro-subheader {
   text-align: center;
-  max-width: 600px
-  padding: 20px
-  border: 1px solid transparent
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid transparent;
   overflow: hidden; /* Ensures text doesn't overflow */
   white-space: nowrap; /* Prevents wrapping */
   margin: 0 auto; /* Center text */
@@ -224,14 +224,22 @@ body {
     margin-bottom: 10px; /* Add space between bullet points and text */
 }
 
+.typing-line {
+    display: block;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    width: 0; /* Initially set width to 0 */
+    animation: typing 4s steps(40, end) forwards; /* Typing animation */
+}
+
 /* Keyframes to remove border at the end of typing animation */
 @keyframes removeBorder {
   from, to { border-right: .15em solid white; }
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+    from { width: 0; }
+    to { width: 100%; }
 }
 
 @keyframes moveText {
