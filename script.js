@@ -30,34 +30,22 @@ startTextAnimation();
 
 
 
+// Function to open modal with full details
 function openModal(details) {
-    const fullDetailsContent = document.querySelector("#fullDetailsModal .modal-content");
-    // Populate the modal with details
+    const fullDetailsContent = document.getElementById("fullDetailsContent");
+    // Populate the modal with full details
     fullDetailsContent.innerHTML = details;
-    // Display the modal
-    document.getElementById("fullDetailsModal").style.display = "block";
+    modal.style.display = "block";
+
+    // Add event listener to close modal when mouse leaves modal content
+    fullDetailsContent.addEventListener("mouseleave", () => {
+        modal.style.display = "none";
+    });
 }
 
-// Function to close the modal
-function closeModal() {
-    document.getElementById("fullDetailsModal").style.display = "none";
-}
-
-// Open the modal when the "Learn more about me here" text is clicked
-document.querySelector(".learn-more").addEventListener("click", function() {
-    const details = `
-        <h2>More about K</h2>
-        <ul>
-            <li>I'm a results-driven Security leader with a proven track record of success in multinational cybersecurity trust organisations.</li>
-            <li>✅ Proven track record of elevating performance excellence</li>
-            <li>✅ Delivering exceptional results</li>
-            <li>✅ Fostering positive relationships</li>
-            <li>✅ Adept in implementing cutting-edge solutions</li>
-            <li>✅ Contributing to digital resiliency</li>
-            <li>✅ Driving operational excellence in Security management</li>
-        </ul>
-    `;
-    openModal(details);
+// Add event listener to close modal when mouse leaves modal
+modal.addEventListener("mouseleave", () => {
+    modal.style.display = "none";
 });
 
 // Close the modal when the user clicks on the close button
