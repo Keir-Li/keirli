@@ -147,6 +147,15 @@ function showContent(sectionId) {
     }
 }
 
+// Add event listeners to navigation buttons
+const navButtons = document.querySelectorAll('.button');
+navButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const sectionId = button.getAttribute('data-section');
+        showContent(sectionId);
+    });
+});
+
 // When the page loads, initially show the intro content
 window.onload = function() {
     showContent('intro');
