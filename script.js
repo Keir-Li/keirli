@@ -1,36 +1,6 @@
-// Typing animation function
-function typeWriter(textElement, text, delay) {
-    const textArray = text.split('');
-    let index = 0;
-
-    function typing() {
-        if (index < textArray.length) {
-            textElement.innerHTML += textArray[index];
-            index++;
-            setTimeout(typing, delay);
-        }
-    }
-
-    typing();
-}
-
-// Typing animation for introduction text
-function startTextAnimation() {
-    const typingLines = document.querySelectorAll('.typing-line');
-    typingLines.forEach((line, index) => {
-        const text = line.innerHTML;
-        setTimeout(() => {
-            typeWriter(line, text, 50); // Adjust delay between characters as needed
-        }, index * 3000); // Delay before typing each line
-    });
-}
-
-// Start the animation
-startTextAnimation();
-
 // Function to open modal with full details
 function openModal(details) {
-    const fullDetailsContent = document.getElementById("fullDetailsContent");
+    const fullDetailsContent = document.querySelector(".modal-content");
     // Populate the modal with full details
     fullDetailsContent.innerHTML = details;
     modal.style.display = "block";
@@ -61,39 +31,17 @@ function openIntroModal() {
     openModal(details);
 }
 
-// Get the modal and the close button
-const modal = document.getElementById("fullDetailsModal");
-const closeBtn = document.getElementsByClassName("close")[0];
-
 // Add event listeners to each minimized card for hover and click
 const minimizedCards = document.querySelectorAll(".minimized-card");
 minimizedCards.forEach((card, index) => {
+    const cardDetails = [ /* Add your card details here for each card */ ];
+    
     card.addEventListener("mouseenter", () => {
-        // Simulate getting full details data (replace with your data)
-        const fullDetails = `
-            <h2>Security Engineer</h2>
-            <h4>Fortune 500 Global Engineering Provider</h4>
-            <ul>
-                <li>Led and managed the application security program, utilizing tools such as Snyk (SAST), Rapid7 (DAST), and Contrast-Assess (IAST) to ensure comprehensive coverage.</li>
-                <li>Provided guidance and mentorship to the application security team, fostering their growth and supporting their day-to-day activities and project work.</li>
-                <!-- Add other details -->
-            </ul>
-        `;
-        openModal(fullDetails);
+        openModal(cardDetails[index]);
     });
 
     card.addEventListener("click", () => {
-        // Simulate getting full details data (replace with your data)
-        const fullDetails = `
-            <h2>Security Engineer</h2>
-            <h4>Fortune 500 Global Engineering Provider</h4>
-            <ul>
-                <li>Led and managed the application security program, utilizing tools such as Snyk (SAST), Rapid7 (DAST), and Contrast-Assess (IAST) to ensure comprehensive coverage.</li>
-                <li>Provided guidance and mentorship to the application security team, fostering their growth and supporting their day-to-day activities and project work.</li>
-                <!-- Add other details -->
-            </ul>
-        `;
-        openModal(fullDetails);
+        openModal(cardDetails[index]);
     });
 });
 
