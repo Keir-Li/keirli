@@ -275,10 +275,18 @@ body {
 
 /* Adjustments to card styling */
 .card {
+    /* Add a background color */
+    background-color: #f8f9fa; /* Light gray background color */
     /* Add border for better visibility */
     border: 1px solid rgba(0, 0, 0, 0.125);
     /* Add some padding to the card body */
     padding: 20px;
+    /* Set a fixed width to prevent them from stacking vertically */
+    width: 100%;
+    /* Make sure the cards sit next to each other */
+    display: inline-block;
+    /* Adjust margin to create space between cards */
+    margin-right: 10px;
 }
 
 .card-body {
@@ -296,6 +304,7 @@ body {
     /* Add margin top to separate subtitle from other content */
     margin-top: 10px;
 }
+
 
 /* Keyframes to remove border at the end of typing animation */
 @keyframes removeBorder {
