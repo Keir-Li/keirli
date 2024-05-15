@@ -34,8 +34,14 @@ function openIntroModal() {
 // Add event listeners to each minimized card for hover and click
 const minimizedCards = document.querySelectorAll(".minimized-card");
 minimizedCards.forEach((card, index) => {
-    const cardDetails = [ /* Add your card details here for each card */ ];
-    
+    // Array containing the content for each card
+    const cardDetails = [
+        `<h2>Content for Card 1</h2><p>This is the content for Card 1.</p>`,
+        `<h2>Content for Card 2</h2><p>This is the content for Card 2.</p>`,
+        `<h2>Content for Card 3</h2><p>This is the content for Card 3.</p>`,
+        `<h2>Content for Card 4</h2><p>This is the content for Card 4.</p>`
+    ];
+
     card.addEventListener("mouseenter", () => {
         openModal(cardDetails[index]);
     });
@@ -72,8 +78,8 @@ function showContent(sectionId) {
         document.querySelector('.animated-text').classList.remove('text-hidden');
         document.querySelector('.finger').classList.remove('finger-hidden');
         document.querySelector('.intro-text').classList.remove('text-hidden');
-        document.querySelector('.intro-header').classList.remove('text-hidden');   
-        document.querySelector('.intro-subheader').classList.remove('text-hidden');   
+        document.querySelector('.intro-header').classList.remove('text-hidden');
+        document.querySelector('.intro-subheader').classList.remove('text-hidden');
 
         // Hide other sections
         document.querySelectorAll('.content').forEach(content => {
@@ -87,8 +93,8 @@ function showContent(sectionId) {
 
         // Hide intro text and header
         document.querySelector('.intro-text').classList.add('text-hidden');
-        document.querySelector('.intro-header').classList.add('text-hidden');   
-        document.querySelector('.intro-subheader').classList.add('text-hidden');   
+        document.querySelector('.intro-header').classList.add('text-hidden');
+        document.querySelector('.intro-subheader').classList.add('text-hidden');
 
         // Show other sections
         document.getElementById(sectionId + '-content').classList.remove('text-hidden');
