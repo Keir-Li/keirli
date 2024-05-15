@@ -16,6 +16,16 @@ body {
     padding: 20px;
 }
 
+.row {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 /* Jumbotron styles */
 .jumbotron {
     position: relative;
