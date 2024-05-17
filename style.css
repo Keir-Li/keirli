@@ -66,6 +66,27 @@ ul {
     background-color: rgba(25, 25, 26, .91); /* Dark background color */
     padding: 10px 0; /* Adjust padding as needed */
     z-index: 3; /* Ensure it's above other elements */
+    overflow-x: auto; /* Enable horizontal scrolling on small screens */
+    white-space: nowrap; /* Prevent items from wrapping */
+}
+
+/* Bottom bar item styles */
+.bottom-bar-item {
+    display: inline-block;
+    margin: 0 10px; /* Adjust margin between items */
+}
+
+/* Adjust font size for better readability on small screens */
+.bottom-bar-item a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 5px 10px; /* Adjust padding for better touch targets */
+}
+
+/* Adjust font size for better readability on small screens */
+.bottom-bar-item a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lighten background color on hover */
 }
 
 .buttons {
@@ -206,14 +227,24 @@ ul {
 
 /* Content section styles */
 .content {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
+    max-width: 400px; /* Adjust max-width as needed for better responsiveness */
     padding: 20px;
     text-align: center;
+}
+
+@media (max-width: 576px) {
+    .content {
+        width: 90%; /* Adjust width for smaller screens */
+    }
 }
 
 .content.active {
