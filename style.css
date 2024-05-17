@@ -388,6 +388,7 @@ ul {
 
 .skill-category .skill-card p {
     margin: auto; /* Center-align the text vertically */
+    padding: 10px 20px;
 }
 
 
