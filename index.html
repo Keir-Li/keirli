@@ -6,6 +6,8 @@
     <title>Keir Li - Security Management (V6.2)</title>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Bootstrap JavaScript -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
@@ -45,19 +47,19 @@
 </div>
 
 <!-- Bottom bar -->
-<div class="bottom-bar">
-  <!-- Button group -->
-  <div class="buttons">
-    <button id="intro-btn" class="button active" onclick="showContent('intro')">My Intro</button>
-    <button id="experience-btn" class="button" onclick="showContent('experience')">My Experience</button>
-    <button id="skills-btn" class="button" onclick="showContent('skills')">My Skills</button>
-    <button id="contact-btn" class="button" onclick="showContent('contact')">My Contact</button>
-  </div>
-</div>
+    <div class="bottom-bar">
+        <!-- Button group -->
+        <div class="buttons">
+            <button id="intro-btn" class="button active" data-section="intro">My Intro</button>
+            <button id="experience-btn" class="button" data-section="experience">My Experience</button>
+            <button id="skills-btn" class="button" data-section="skills">My Skills</button>
+            <button id="contact-btn" class="button" data-section="contact">My Contact</button>
+        </div>
+    </div>
 
 
     <!-- Content sections -->
-    <div id="intro-content">
+    <div id="intro-content" class="content active">
     <!-- HOME SCREEN LAYOUT -->  
     </div>
 
@@ -65,7 +67,7 @@
     <div class="container">
         <h2>My Experience</h2>
         <div class="row">
-            <div class="col-md-3 mb-3">
+            <div class="col-md-6 col-lg-3 mb-3">
                 <div class="card border-0 shadow h-100 minimized-card card1" id="card2">
                     <img src="engineeringicon.png" class="mx-auto d-block mt-3" alt="Security Engineer" style="max-width: 100px;">
                     <div class="card-body" style="color: black; overflow-y: auto; max-height: 300px;">
@@ -74,7 +76,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 mb-3">
+            <div class="col-md-6 col-lg-3 mb-3">
                 <div class="card border-0 shadow h-100 minimized-card card2" id="card2">
                     <img src="recruitmenticon.png" class="mx-auto d-block mt-3" alt="Security Engineer" style="max-width: 100px;">
                     <div class="card-body" style="color: black; overflow-y: auto; max-height: 300px;">
@@ -83,7 +85,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 mb-3">
+            <div class="col-md-6 col-lg-3 mb-3">
                 <div class="card border-0 shadow h-100 minimized-card card3" id="card3">
                     <img src="infrastructureicon.png" class="mx-auto d-block mt-3" alt="Security Engineer" style="max-width: 100px;">
                     <div class="card-body" style="color: black; overflow-y: auto; max-height: 300px;">
@@ -92,7 +94,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 mb-3">
+            <div class="col-md-6 col-lg-3 mb-3">
                 <div class="card border-0 shadow h-100 minimized-card card4" id="card4">
                     <img src="interneticon.png" class="mx-auto d-block mt-3" alt="Security Engineer" style="max-width: 100px;">
                     <div class="card-body" style="color: black; overflow-y: auto; max-height: 300px;">
@@ -183,7 +185,7 @@
         <h2>My Contact</h2>
         <div class="card border-0 shadow">
             <div class="card-body text-center">
-                <img src="sendemailicon.png" class="email-icon" alt="Email" style="max-width: 100px;">
+                <img src="sendemailicon.png" class="email-icon" alt="Email">
                     <div class="email-contact">
                     <div>
                         <h4>Work With Me?</h4>
