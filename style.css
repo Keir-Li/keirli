@@ -366,6 +366,31 @@ ul {
     animation: typing 4s steps(40, end) forwards; /* Typing animation */
 }
 
+/* Add this CSS for the skills section */
+
+.skill-category {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.skill-category h3 {
+    font-weight: bold;
+}
+
+.skill-category .skill-card {
+    display: flex;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category .skill-card p {
+    margin: auto; /* Center-align the text vertically */
+}
+
+
 .skill-card {
     margin-bottom: 20px;
     padding: 20px;
