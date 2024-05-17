@@ -366,6 +366,35 @@ ul {
     animation: typing 4s steps(40, end) forwards; /* Typing animation */
 }
 
+.skill-card {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.skill-card h4 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-card ul li {
+    margin-bottom: 5px;
+}
+
+.card-deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
 .email-contact {
     display: flex;
     align-items: center;
