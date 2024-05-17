@@ -372,11 +372,8 @@ ul {
 /* Updated CSS for the skills section */
 
 .skill-category {
-    margin-bottom: 30px;
     text-align: center;
-    padding: 20px 0; /* Add padding to the top and bottom */
-    overflow: hidden; /* Hide overflow */
-    max-height: 300px; /* Limit the height */
+    margin-bottom: 30px;
 }
 
 .skill-category h3 {
@@ -392,12 +389,12 @@ ul {
 }
 
 .skill-card {
-    flex: 0 0 calc(33.33% - 20px); /* Adjust width for three cards per row with some gap */
-    background-color: #f8f9fa;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .skill-card:hover {
