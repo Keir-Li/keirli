@@ -369,10 +369,14 @@ ul {
 
 /* Updated CSS for the skills section */
 
+/* Updated CSS for the skills section */
+
 .skill-category {
     margin-bottom: 30px;
     text-align: center;
     padding: 20px 0; /* Add padding to the top and bottom */
+    overflow: hidden; /* Hide overflow */
+    max-height: 300px; /* Limit the height */
 }
 
 .skill-category h3 {
@@ -404,6 +408,7 @@ ul {
     text-align: center;
     padding: 20px;
 }
+
 
 
 
