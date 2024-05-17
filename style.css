@@ -366,6 +366,28 @@ ul {
     animation: typing 4s steps(40, end) forwards; /* Typing animation */
 }
 
+.email-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+
+.email-icon {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 10px; /* Add some space between icon and email address */
+    }
+
+.email-link {
+    color: #333; /* Adjust color as needed */
+    text-decoration: none;
+    font-size: 18px;
+    }
+
+.email-link:hover {
+    text-decoration: underline; /* Add underline on hover */
+    }
+
 /* Keyframes to remove border at the end of typing animation */
 @keyframes removeBorder {
     from, to { border-right: .15em solid white; }
