@@ -393,11 +393,22 @@ ul {
 
 
 .skill-card {
-    margin-bottom: 20px;
+    display: inline-block;
+    background-color: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin: 0 10px;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+}
+
+.skill-name {
+    text-align: center;
     padding: 20px;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .skill-card h4 {
