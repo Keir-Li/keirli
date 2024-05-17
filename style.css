@@ -368,6 +368,8 @@ ul {
 
 /* Add this CSS for the skills section */
 
+/* Add this CSS for the skills section */
+
 .skill-category {
     margin-bottom: 30px;
     text-align: center;
@@ -377,19 +379,25 @@ ul {
     font-weight: bold;
 }
 
-.skill-category .skill-card {
-    display: flex;
+.skill-card {
+    display: inline-block;
+    background-color: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
     margin: 0 10px;
-    padding: 10px 20px;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.skill-category .skill-card p {
-    margin: auto; /* Center-align the text vertically */
-    padding: 10px 20px;
+.skill-card:hover {
+    transform: scale(1.05);
 }
+
+.skill-name {
+    text-align: center;
+    padding: 20px;
+}
+
 
 
 .skill-card {
