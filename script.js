@@ -35,22 +35,6 @@ function openIntroModal() {
 const modal = document.getElementById("fullDetailsModal");
 const closeBtn = document.getElementsByClassName("close")[0];
 
-// Add event listeners to each minimized card for hover and click
-const minimizedCards = document.querySelectorAll(".minimized-card");
-minimizedCards.forEach((card, index) => {
-    card.addEventListener("mouseenter", () => {
-        // Simulate getting full details data (replace with your data)
-        const fullDetails = `
-            <h2>Security Engineer</h2>
-            <h4>Fortune 500 Global Engineering Provider</h4>
-            <ul>
-                <li>Led and managed the application security program, utilizing tools such as Snyk (SAST), Rapid7 (DAST), and Contrast-Assess (IAST) to ensure comprehensive coverage.</li>
-                <li>Provided guidance and mentorship to the application security team, fostering their growth and supporting their day-to-day activities and project work.</li>
-                <!-- Add other details -->
-            </ul>
-        `;
-        openModal(fullDetails);
-    });
 
     card.addEventListener("click", () => {
         // Simulate getting full details data (replace with your data)
