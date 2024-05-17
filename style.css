@@ -169,12 +169,22 @@ ul {
 /* Animated text styles */
 .animated-text {
   position: fixed;
-  bottom: -25vh; /* Adjust as needed */
+  bottom: 20vh; /* Default position for larger screens */
   left: 0;
   right: 0;
   text-align: center;
   z-index: 3;
   animation: moveText 1s infinite alternate; /* Animation for moving text */
+}
+
+  /* Adjust position for smaller screens */
+  @media (max-width: 768px) {
+    bottom: 10vh; /* Adjust position for screens up to 768px width */
+  }
+
+  @media (max-width: 576px) {
+    bottom: 5vh; /* Adjust position for screens up to 576px width */
+  }
 }
 
 .message {
