@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V5.7</title>
+    <title>V5.8</title>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap JavaScript -->
@@ -314,102 +314,74 @@
         console.error("Learn more element not found");
     }
 
+    // Function to generate modal content based on card index
+    function generateModalContent(index) {
+        let title, company, skills, leadership, expertise;
+
+        switch (index) {
+            case 1:
+                title = "Security Engineer";
+                company = "Fortune 500 Global Engineering Provider";
+                skills = "Cybersecurity | Snyk (SAST) | Rapid7 (DAST) | Contrast-Assess (IAST) | Open Source Scanning (Mend) | Vulnerability Scanning (Tenable Nessus) | SonarQube (SCA) | MFA & Access Keys | Pen Testing | Crowdstrike (Intrusion Detection) | Deprecated OS | Container Critical/Top Issues | Incident Management | Security Release Review | AWS | Azure | DevOps | Threat Modeling | OWASP Top 10 | CWE 25 | Risk Score Management | Mentoring";
+                leadership = "Provided guidance and mentorship to the application security team, fostering their growth and supporting their day-to-day activities and project work.";
+                expertise = "";
+                break;
+            case 2:
+                title = "Senior Software Engineer";
+                company = "World Class Leading Recruitment Organisation";
+                skills = "Spunk Monitoring & Alerting | Salesforce | Waterfall | AWS | Mulesoft API Management | DevOps | Vulnerability & Patching Manager | MoveItAutomation | ServiceNow | BigPanda | Cybersecurity | Incident Management | KeePass Security Set up & Management | Jira | Documentation and KB Builder";
+                leadership = "Led migration project from outdated password manager to new solution, ensuring smooth transition and enhanced security measures. Implemented documentation for Splunk Monitoring & Alerting system, improving system visibility and response time to security incidents. Led vulnerability & patching management efforts.";
+                expertise = "Proficient in Salesforce, AWS, and DevOps practices. Managed incident responses and documentation processes for improved efficiency.";
+                break;
+            case 3:
+                title = "Application Support Lead";
+                company = "National Infrastructure Hub";
+                skills = ".NET Framework, Core, 5 & 6 | Blazor | Scrum/Agile | GitHub & DevOps | UAT Lead | Azure | API Management | IAC ARM Templates | Cybersecurity | 365 & Active Directory | LastPass Security | Phishing Lead & Auditor | Migrations (Azure & SharePoint) | Technical & Supporting Application Lead | Documentation";
+                leadership = "Led UAT efforts for critical applications, ensuring smooth deployment and user acceptance. Implemented LastPass Security and conducted phishing audits for enhanced cybersecurity. Managed migration of SharePoint from on-premise to cloud, implementing governance measures.";
+                expertise = "Skilled in .NET Framework, Azure, and API management. Managed migrations to Azure & SharePoint, streamlining processes and improving system reliability.";
+                break;
+            case 4:
+                title = "Senior Technical Analyst";
+                company = "Global Cybersecurity Trust Provider";
+                skills = "Cybersecurity | UAT & Hypercare | Jira Incident & Bug Ticket Manager | Azure | Salesforce | Project & Process Management | Senior POC, Out of Hours & Escalation Point | Global Partner Trainer (USA & Europe)";
+                leadership = "Managed as the Senior POC and escalation point mentoring the team, ensuring timely resolution of critical issues. Trained global partners on cybersecurity and usage of products.";
+                expertise = "Proficient in cybersecurity practices, project management, and Salesforce. Managed Jira incident & bug tickets for efficient issue resolution.";
+                break;
+            default:
+                title = "Default Title";
+                company = "Default Company";
+                skills = "Default Skill 1 | Default Skill 2";
+                leadership = "Default leadership text";
+                expertise = "Default expertise text";
+        }
+
+        return `
+            <h2>${title}</h2>
+            <h4>${company}</h4>
+            <div class="modal-section skills">
+                <strong>Skills:</strong> <span class="skills-list">${skills}</span>
+            </div>
+            <div class="modal-section leadership">
+                <strong>Leadership:</strong>
+                <p>${leadership}</p>
+            </div>
+            <div class="modal-section expertise">
+                <strong>Expertise:</strong>
+                <p>${expertise}</p>
+            </div>
+        `;
+    }
+
     // Add event listeners to each minimized card for hover and click
     const minimizedCards = document.querySelectorAll(".minimized-card");
-    minimizedCards.forEach((card) => {
+    minimizedCards.forEach((card, index) => {
         card.addEventListener("mouseenter", () => {
-            let fullDetails = '';
-
-            if (card.classList.contains('card1')) {
-                fullDetails = `
-                    <h2>Security Engineer</h2>
-                    <h4>Fortune 500 Global Engineering Provider</h4>
-                    <ul>
-                        <li class="italic">Cybersecurity  |  Snyk (SAST )  |  Rapid7 (DAST)  |  Contrast-Assess (IAST)  | Open Source Scanning (Mend)  |  Vulnerability Scanning (Tenable Nessus)  | SonarQube (SCA)  |  MFA & Access Keys  |  Pen Testing  |  Crowdstrike (Intrusion Detection)  |  Deprecated OS  |  Container Critical/Top Issues  |  Incident Management  |  Security Release Review  |  AWS  |  Azure  |  DevOps  |  Threat Modeling  |  OWASP Top 10  |  CWE 25  |  Risk Score Management  |  Mentoring</li>
-                        <li>Provided guidance and mentorship to the application security team, fostering their growth and supporting their day-to-day activities and project work.</li>
-                        <!-- Add other details specific to card 1 -->
-                    </ul>
-                `;
-            } else if (card.classList.contains('card2')) {
-                fullDetails = `
-                    <h2>Senior Software Engineer</h2>
-                    <h4>World Class Leading Recruitment Organisation</h4>
-                    <ul>
-                        <li class="italic">Skills: Spunk Monitoring & Alerting  |  Salesforce  |  Waterfall  |  AWS  |  Mulesoft API Management  |  DevOps  |  Vulnerability & Patching  Manager | MoveItAutomation  |  ServiceNow  |  BigPanda  | Cybersecurity   |  Incident Management  | KeePass Security Set up & Management  |  Jira  |  Documentation and KB Builder</li>
-                        <li>Leadership: Led migration project from outdated password manager to new solution, ensuring smooth transition and enhanced security measures. Implemented documentation for Splunk Monitoring & Alerting system, improving system visibility and response time to security incidents. Led vulnerability & patching management efforts.</li>
-                        <li>Expertise: Proficient in Salesforce, AWS, and DevOps practices. Managed incident responses and documentation processes for improved efficiency.
-                    </ul>
-                `;
-            } else if (card.classList.contains('card3')) {
-                fullDetails = `
-                    <h2>Application Support Lead</h2>
-                    <h4>National Infrastructure Hub</h4>
-                    <ul>
-                        <li class="italic">Skills: .NET Framework, Core, 5 & 6  |  Blazor  |  Scrum/Agile  |  GitHub & DevOps   | UAT Lead  |  Azure  |  API Management  |  IAC ARM Templates | Cybersecurity  |  365 & Active Directory  |  LastPass Security | Phishing Lead  & Auditor | Migrations (Azure & SharePoint) | Technical & Supporting Application Lead  | Documentation</li>
-                        <li>Leadership: Led UAT efforts for critical applications, ensuring smooth deployment and user acceptance. Implemented LastPass Security and conducted phishing audits for enhanced cybersecurity. Managed migration of SharePoint from on-premise to cloud, implementing governance measures.</li>
-                        <li>Expertise: Skilled in .NET Framework, Azure, and API management. Managed migrations to Azure & SharePoint, streamlining processes and improving system reliability.</li>
-                    </ul>
-                `;
-            } else if (card.classList.contains('card4')) {
-                fullDetails = `
-                    <h2>Senior Technical Analyst</h2>
-                    <h4>Global Cybersecurity Trust Provider</h4>
-                    <ul>
-                        <li class="italic">Skills: Cybersecurity  |  UAT & Hypercare  |  Jira Incident & Bug Ticket Manager  |  Azure  |  Salesforce  |  Project & Process Management  |  Senior POC, Out of Hours & Escalation Point  |  Global Partner Trainer (USA & Europe)</li>
-                        <li>Leadership: Managed as the Senior POC and escalation point mentioring the team, ensuring timely resolution of critical issues. Trained global partners on cybersecurity and usage of products.</li>
-                        <li>Expertise: Proficient in cybersecurity practices, project management, and Salesforce. Managed Jira incident & bug tickets for efficient issue resolution.</li>
-                    </ul>
-                `;
-            }
-
+            const fullDetails = generateModalContent(index + 1);
             openModal(fullDetails);
         });
 
         card.addEventListener("click", () => {
-            let fullDetails = '';
-
-            if (card.classList.contains('card1')) {
-                fullDetails = `
-                    <h2>Security Engineer</h2>
-                    <h4>Fortune 500 Global Engineering Provider</h4>
-                    <ul>
-                        <li class="italic">Cybersecurity  |  Snyk (SAST )  |  Rapid7 (DAST)  |  Contrast-Assess (IAST)  | Open Source Scanning (Mend)  |  Vulnerability Scanning (Tenable Nessus)  | SonarQube (SCA)  |  MFA & Access Keys  |  Pen Testing  |  Crowdstrike (Intrusion Detection)  |  Deprecated OS  |  Container Critical/Top Issues  |  Incident Management  |  Security Release Review  |  AWS  |  Azure  |  DevOps  |  Threat Modeling  |  OWASP Top 10  |  CWE 25  |  Risk Score Management  |  Mentoring</li>
-                        <li>Provided guidance and mentorship to the application security team, fostering their growth and supporting their day-to-day activities and project work.</li>
-                        <!-- Add other details specific to card 1 -->
-                    </ul>
-                `;
-            } else if (card.classList.contains('card2')) {
-                fullDetails = `
-                    <h2>Senior Software Engineer</h2>
-                    <h4>World Class Leading Recruitment Organisation</h4>
-                    <ul>
-                        <li class="italic">Skills: Spunk Monitoring & Alerting  |  Salesforce  |  Waterfall  |  AWS  |  Mulesoft API Management  |  DevOps  |  Vulnerability & Patching  Manager | MoveItAutomation  |  ServiceNow  |  BigPanda  | Cybersecurity   |  Incident Management  | KeePass Security Set up & Management  |  Jira  |  Documentation and KB Builder</li>
-                        <li>Leadership: Led migration project from outdated password manager to new solution, ensuring smooth transition and enhanced security measures. Implemented documentation for Splunk Monitoring & Alerting system, improving system visibility and response time to security incidents. Led vulnerability & patching management efforts.</li>
-                        <li>Expertise: Proficient in Salesforce, AWS, and DevOps practices. Managed incident responses and documentation processes for improved efficiency.
-                    </ul>
-                `;
-            } else if (card.classList.contains('card3')) {
-                fullDetails = `
-                    <h2>Application Support Lead</h2>
-                    <h4>National Infrastructure Hub</h4>
-                    <ul>
-                        <li class="italic">Skills: .NET Framework, Core, 5 & 6  |  Blazor  |  Scrum/Agile  |  GitHub & DevOps   | UAT Lead  |  Azure  |  API Management  |  IAC ARM Templates | Cybersecurity  |  365 & Active Directory  |  LastPass Security | Phishing Lead  & Auditor | Migrations (Azure & SharePoint) | Technical & Supporting Application Lead  | Documentation</li>
-                        <li>Leadership: Led UAT efforts for critical applications, ensuring smooth deployment and user acceptance. Implemented LastPass Security and conducted phishing audits for enhanced cybersecurity. Managed migration of SharePoint from on-premise to cloud, implementing governance measures.</li>
-                        <li>Expertise: Skilled in .NET Framework, Azure, and API management. Managed migrations to Azure & SharePoint, streamlining processes and improving system reliability.</li>
-                    </ul>
-                `;
-            } else if (card.classList.contains('card4')) {
-                fullDetails = `
-                    <h2>Senior Technical Analyst</h2>
-                    <h4>Global Cybersecurity Trust Provider</h4>
-                    <ul>
-                        <li class="italic">Skills: Cybersecurity  |  UAT & Hypercare  |  Jira Incident & Bug Ticket Manager  |  Azure  |  Salesforce  |  Project & Process Management  |  Senior POC, Out of Hours & Escalation Point  |  Global Partner Trainer (USA & Europe)</li>
-                        <li>Leadership: Managed as the Senior POC and escalation point mentioring the team, ensuring timely resolution of critical issues. Trained global partners on cybersecurity and usage of products.</li>
-                        <li>Expertise: Proficient in cybersecurity practices, project management, and Salesforce. Managed Jira incident & bug tickets for efficient issue resolution.</li>
-                    </ul>
-                `;
-            }
-
+            const fullDetails = generateModalContent(index + 1);
             openModal(fullDetails);
         });
     });
@@ -464,6 +436,7 @@
     // When the page loads, initially show the intro content
     showContent('intro');
 </script>
+
 
 
 
