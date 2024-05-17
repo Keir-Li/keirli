@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>V5.4</title>
+    <title>V5.5</title>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap JavaScript -->
@@ -66,7 +66,7 @@
         <h2>My Experience</h2>
         <div class="row">
             <div class="col-md-3 mb-3">
-                <div class="card border-0 shadow h-100 minimized-card" id="card2">
+                <div class="card border-0 shadow h-100 minimized-card card1" id="card2">
                     <img src="engineeringicon.png" class="mx-auto d-block mt-3" alt="Security Engineer" style="max-width: 100px;">
                     <div class="card-body" style="color: black; overflow-y: auto; max-height: 300px;">
                         <h5 class="card-title"><strong>Number 1</strong></h5>
@@ -75,7 +75,7 @@
                 </div>
             </div>
             <div class="col-md-3 mb-3">
-                <div class="card border-0 shadow h-100 minimized-card" id="card2">
+                <div class="card border-0 shadow h-100 minimized-card card2" id="card2">
                     <img src="engineeringicon.png" class="mx-auto d-block mt-3" alt="Security Engineer" style="max-width: 100px;">
                     <div class="card-body" style="color: black; overflow-y: auto; max-height: 300px;">
                         <h5 class="card-title"><strong>Number 2</strong></h5>
@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="col-md-3 mb-3">
-                <div class="card border-0 shadow h-100 minimized-card" id="card3">
+                <div class="card border-0 shadow h-100 minimized-card card3" id="card3">
                     <img src="engineeringicon.png" class="mx-auto d-block mt-3" alt="Security Engineer" style="max-width: 100px;">
                     <div class="card-body" style="color: black; overflow-y: auto; max-height: 300px;">
                         <h5 class="card-title"><strong>Number 3</strong></h5>
@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div class="col-md-3 mb-3">
-                <div class="card border-0 shadow h-100 minimized-card" id="card4">
+                <div class="card border-0 shadow h-100 minimized-card card4" id="card4">
                     <img src="engineeringicon.png" class="mx-auto d-block mt-3" alt="Security Engineer" style="max-width: 100px;">
                     <div class="card-body" style="color: black; overflow-y: auto; max-height: 300px;">
                         <h5 class="card-title"><strong>Number 4</strong></h5>
@@ -250,154 +250,221 @@
 </section>
 
 
+<script>
+    // Function to open modal with full details
+    function openModal(details) {
+        const fullDetailsContent = document.querySelector(".modal-content");
+        if (fullDetailsContent) {
+            fullDetailsContent.innerHTML = details;
+            modal.style.display = "block";
 
-    
-    <script>
-        // Function to open modal with full details
-        function openModal(details) {
-            const fullDetailsContent = document.querySelector(".modal-content");
-            if (fullDetailsContent) {
-                fullDetailsContent.innerHTML = details;
-                modal.style.display = "block";
-
-                // Add event listener to close modal when mouse leaves modal content
-                fullDetailsContent.addEventListener("mouseleave", () => {
-                    modal.style.display = "none";
-                });
-            } else {
-                console.error("Modal content element not found");
-            }
-        }
-
-        // Function to open intro modal
-        function openIntroModal() {
-            const details = `
-                <h2>More about K</h2>
-                <ul>
-                    <li>I'm a results-driven Security leader with a proven track record of success in multinational cybersecurity trust organisations.</li>
-                    <li>✅ Proven track record of elevating performance excellence</li>
-                    <li>✅ Delivering exceptional results</li>
-                    <li>✅ Fostering positive relationships</li>
-                    <li>✅ Adept in implementing cutting-edge solutions</li>
-                    <li>✅ Contributing to digital resiliency</li>
-                    <li>✅ Driving operational excellence in Security management</li>
-                </ul>
-            `;
-            openModal(details);
-        }
-
-        // Get the modal and the close button
-        const modal = document.getElementById("fullDetailsModal");
-        const closeBtn = document.getElementsByClassName("close")[0];
-
-        // Verify if modal and closeBtn exist
-        if (modal && closeBtn) {
-            // Close the modal when the user clicks on the close button
-            closeBtn.addEventListener("click", () => {
+            // Add event listener to close modal when mouse leaves modal content
+            fullDetailsContent.addEventListener("mouseleave", () => {
                 modal.style.display = "none";
             });
+        } else {
+            console.error("Modal content element not found");
+        }
+    }
 
-            // Close the modal when the user clicks outside the modal
-            window.addEventListener("click", (event) => {
-                if (event.target === modal) {
-                    modal.style.display = "none";
+    // Function to open intro modal
+    function openIntroModal() {
+        const details = `
+            <h2>More about K</h2>
+            <ul>
+                <li>I'm a results-driven Security leader with a proven track record of success in multinational cybersecurity trust organisations.</li>
+                <li>✅ Proven track record of elevating performance excellence</li>
+                <li>✅ Delivering exceptional results</li>
+                <li>✅ Fostering positive relationships</li>
+                <li>✅ Adept in implementing cutting-edge solutions</li>
+                <li>✅ Contributing to digital resiliency</li>
+                <li>✅ Driving operational excellence in Security management</li>
+            </ul>
+        `;
+        openModal(details);
+    }
+
+    // Get the modal and the close button
+    const modal = document.getElementById("fullDetailsModal");
+    const closeBtn = document.getElementsByClassName("close")[0];
+
+    // Verify if modal and closeBtn exist
+    if (modal && closeBtn) {
+        // Close the modal when the user clicks on the close button
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        // Close the modal when the user clicks outside the modal
+        window.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    } else {
+        console.error("Modal or close button not found");
+    }
+
+    // Open the modal when the "Learn more about me here" text is clicked or hovered over
+    const learnMoreElement = document.querySelector(".learn-more");
+    if (learnMoreElement) {
+        learnMoreElement.addEventListener("mouseover", openIntroModal);
+        learnMoreElement.addEventListener("click", openIntroModal);
+    } else {
+        console.error("Learn more element not found");
+    }
+
+    // Add event listeners to each minimized card for hover and click
+    const minimizedCards = document.querySelectorAll(".minimized-card");
+    minimizedCards.forEach((card) => {
+        card.addEventListener("mouseenter", () => {
+            let fullDetails = '';
+
+            if (card.classList.contains('card1')) {
+                fullDetails = `
+                    <h2>Security Engineer</h2>
+                    <h4>Fortune 500 Global Engineering Provider</h4>
+                    <ul>
+                        <li>Led and managed the application security program, utilizing tools such as Snyk (SAST), Rapid7 (DAST), and Contrast-Assess (IAST) to ensure comprehensive coverage.</li>
+                        <li>Provided guidance and mentorship to the application security team, fostering their growth and supporting their day-to-day activities and project work.</li>
+                        <!-- Add other details specific to card 1 -->
+                    </ul>
+                `;
+            } else if (card.classList.contains('card2')) {
+                fullDetails = `
+                    <h2>Cybersecurity Analyst</h2>
+                    <h4>Major Financial Institution</h4>
+                    <ul>
+                        <li>Implemented and monitored security measures for the protection of computer systems, networks, and information.</li>
+                        <li>Identified and resolved security issues by performing vulnerability assessments and penetration testing.</li>
+                        <!-- Add other details specific to card 2 -->
+                    </ul>
+                `;
+            } else if (card.classList.contains('card3')) {
+                fullDetails = `
+                    <h2>Information Security Manager</h2>
+                    <h4>Leading Tech Company</h4>
+                    <ul>
+                        <li>Directed an information security program, ensuring the confidentiality, integrity, and availability of IT assets.</li>
+                        <li>Developed and implemented security policies, protocols, and procedures.</li>
+                        <!-- Add other details specific to card 3 -->
+                    </ul>
+                `;
+            } else if (card.classList.contains('card4')) {
+                fullDetails = `
+                    <h2>IT Security Consultant</h2>
+                    <h4>Top Consulting Firm</h4>
+                    <ul>
+                        <li>Advised clients on IT security best practices and strategies to protect their digital assets.</li>
+                        <li>Conducted security audits and risk assessments to identify vulnerabilities.</li>
+                        <!-- Add other details specific to card 4 -->
+                    </ul>
+                `;
+            }
+
+            openModal(fullDetails);
+        });
+
+        card.addEventListener("click", () => {
+            let fullDetails = '';
+
+            if (card.classList.contains('card1')) {
+                fullDetails = `
+                    <h2>Security Engineer</h2>
+                    <h4>Fortune 500 Global Engineering Provider</h4>
+                    <ul>
+                        <li>Led and managed the application security program, utilizing tools such as Snyk (SAST), Rapid7 (DAST), and Contrast-Assess (IAST) to ensure comprehensive coverage.</li>
+                        <li>Provided guidance and mentorship to the application security team, fostering their growth and supporting their day-to-day activities and project work.</li>
+                        <!-- Add other details specific to card 1 -->
+                    </ul>
+                `;
+            } else if (card.classList.contains('card2')) {
+                fullDetails = `
+                    <h2>Cybersecurity Analyst</h2>
+                    <h4>Major Financial Institution</h4>
+                    <ul>
+                        <li>Implemented and monitored security measures for the protection of computer systems, networks, and information.</li>
+                        <li>Identified and resolved security issues by performing vulnerability assessments and penetration testing.</li>
+                        <!-- Add other details specific to card 2 -->
+                    </ul>
+                `;
+            } else if (card.classList.contains('card3')) {
+                fullDetails = `
+                    <h2>Information Security Manager</h2>
+                    <h4>Leading Tech Company</h4>
+                    <ul>
+                        <li>Directed an information security program, ensuring the confidentiality, integrity, and availability of IT assets.</li>
+                        <li>Developed and implemented security policies, protocols, and procedures.</li>
+                        <!-- Add other details specific to card 3 -->
+                    </ul>
+                `;
+            } else if (card.classList.contains('card4')) {
+                fullDetails = `
+                    <h2>IT Security Consultant</h2>
+                    <h4>Top Consulting Firm</h4>
+                    <ul>
+                        <li>Advised clients on IT security best practices and strategies to protect their digital assets.</li>
+                        <li>Conducted security audits and risk assessments to identify vulnerabilities.</li>
+                        <!-- Add other details specific to card 4 -->
+                    </ul>
+                `;
+            }
+
+            openModal(fullDetails);
+        });
+    });
+
+    // Function to show content based on sectionId
+    function showContent(sectionId) {
+        const buttons = document.querySelectorAll('.button');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        document.getElementById(sectionId + '-btn').classList.add('active');
+
+        const contents = document.querySelectorAll('.content');
+        contents.forEach(content => content.classList.remove('active'));
+        document.getElementById(sectionId + '-content').classList.add('active');
+
+        // Show or hide the intro text and animated text based on which section is active
+        if (sectionId === 'intro') {
+            document.querySelector('.animated-text').classList.remove('text-hidden');
+            document.querySelector('.finger').classList.remove('finger-hidden');
+            document.querySelector('.intro-text').classList.remove('text-hidden');
+            document.querySelector('.intro-header').classList.remove('text-hidden');   
+            document.querySelector('.intro-subheader').classList.remove('text-hidden');   
+
+            // Hide other sections
+            document.querySelectorAll('.content').forEach(content => {
+                if (content.id !== 'intro-content') {
+                    content.classList.add('text-hidden');
                 }
             });
         } else {
-            console.error("Modal or close button not found");
+            document.querySelector('.animated-text').classList.add('text-hidden');
+            document.querySelector('.finger').classList.add('finger-hidden');
+
+            // Hide intro text and header
+            document.querySelector('.intro-text').classList.add('text-hidden');
+            document.querySelector('.intro-header').classList.add('text-hidden');   
+            document.querySelector('.intro-subheader').classList.add('text-hidden');   
+
+            // Show other sections
+            document.getElementById(sectionId + '-content').classList.remove('text-hidden');
         }
+    }
 
-        // Open the modal when the "Learn more about me here" text is clicked or hovered over
-        const learnMoreElement = document.querySelector(".learn-more");
-        if (learnMoreElement) {
-            learnMoreElement.addEventListener("mouseover", openIntroModal);
-            learnMoreElement.addEventListener("click", openIntroModal);
-        } else {
-            console.error("Learn more element not found");
-        }
-
-        // Add event listeners to each minimized card for hover and click
-        const minimizedCards = document.querySelectorAll(".minimized-card");
-        minimizedCards.forEach((card, index) => {
-            card.addEventListener("mouseenter", () => {
-                // Simulate getting full details data (replace with your data)
-                const fullDetails = `
-                    <h2>Security Engineer</h2>
-                    <h4>Fortune 500 Global Engineering Provider</h4>
-                    <ul>
-                        <li>Led and managed the application security program, utilizing tools such as Snyk (SAST), Rapid7 (DAST), and Contrast-Assess (IAST) to ensure comprehensive coverage.</li>
-                        <li>Provided guidance and mentorship to the application security team, fostering their growth and supporting their day-to-day activities and project work.</li>
-                        <!-- Add other details -->
-                    </ul>
-                `;
-                openModal(fullDetails);
-            });
-
-            card.addEventListener("click", () => {
-                // Simulate getting full details data (replace with your data)
-                const fullDetails = `
-                    <h2>Security Engineer</h2>
-                    <h4>Fortune 500 Global Engineering Provider</h4>
-                    <ul>
-                        <li>Led and managed the application security program, utilizing tools such as Snyk (SAST), Rapid7 (DAST), and Contrast-Assess (IAST) to ensure comprehensive coverage.</li>
-                        <li>Provided guidance and mentorship to the application security team, fostering their growth and supporting their day-to-day activities and project work.</li>
-                        <!-- Add other details -->
-                    </ul>
-                `;
-                openModal(fullDetails);
-            });
+    // Add event listeners to navigation buttons
+    const navButtons = document.querySelectorAll('.button');
+    navButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const sectionId = button.getAttribute('data-section');
+            showContent(sectionId);
         });
+    });
 
-        // Function to show content based on sectionId
-        function showContent(sectionId) {
-            const buttons = document.querySelectorAll('.button');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            document.getElementById(sectionId + '-btn').classList.add('active');
+    // When the page loads, initially show the intro content
+    showContent('intro');
+</script>
 
-            const contents = document.querySelectorAll('.content');
-            contents.forEach(content => content.classList.remove('active'));
-            document.getElementById(sectionId + '-content').classList.add('active');
-
-            // Show or hide the intro text and animated text based on which section is active
-            if (sectionId === 'intro') {
-                document.querySelector('.animated-text').classList.remove('text-hidden');
-                document.querySelector('.finger').classList.remove('finger-hidden');
-                document.querySelector('.intro-text').classList.remove('text-hidden');
-                document.querySelector('.intro-header').classList.remove('text-hidden');   
-                document.querySelector('.intro-subheader').classList.remove('text-hidden');   
-
-                // Hide other sections
-                document.querySelectorAll('.content').forEach(content => {
-                    if (content.id !== 'intro-content') {
-                        content.classList.add('text-hidden');
-                    }
-                });
-            } else {
-                document.querySelector('.animated-text').classList.add('text-hidden');
-                document.querySelector('.finger').classList.add('finger-hidden');
-
-                // Hide intro text and header
-                document.querySelector('.intro-text').classList.add('text-hidden');
-                document.querySelector('.intro-header').classList.add('text-hidden');   
-                document.querySelector('.intro-subheader').classList.add('text-hidden');   
-
-                // Show other sections
-                document.getElementById(sectionId + '-content').classList.remove('text-hidden');
-            }
-        }
-
-        // Add event listeners to navigation buttons
-        const navButtons = document.querySelectorAll('.button');
-        navButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const sectionId = button.getAttribute('data-section');
-                showContent(sectionId);
-            });
-        });
-
-        // When the page loads, initially show the intro content
-        showContent('intro');
-    </script>
 
 
 
