@@ -15,7 +15,7 @@ ul {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -24,10 +24,20 @@ ul {
     
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: center;
+    flex-wrap: wrap;
+    align-content: center; /* Center the cards horizontally */
+    gap: 20px; /* Add space between the cards */
+    margin: 0; /* Remove default margin */
+    padding: 20px 0; /* Optional: Add padding to the top and bottom */
     justify-content: center;
     align-items: flex-start;
+}
+
+/* Column styles */
+.col-md-3 {
+    flex: 0 0 calc(25% - 20px); /* Ensure four cards fit in one row with spacing */
+    max-width: calc(25% - 20px); /* Ensure columns take up 25% of the container's width */
+    box-sizing: border-box;
 }
 
 /* Jumbotron styles */
@@ -100,6 +110,45 @@ ul {
   background-color: rgba(255, 255, 255, 0.2); /* Light background color for active button */
 }
 
+/* Card styles */
+.card {
+    background-color: #f8f9fa; /* Light gray background color */
+    border: 1px solid rgba(0, 0, 0, 0.125); /* Add border for better visibility */
+    padding: 20px; /* Add some padding to the card body */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for depth */
+    transition: transform 0.2s; /* Smooth transform effect */
+    height: 100%; /* Ensure cards take the full height of the column */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-body {
+    color: black;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.card-title {
+    margin-bottom: 10px; /* Add margin bottom to separate title from other content */
+}
+
+.card-subtitle {
+    margin-top: 10px; /* Add margin top to separate subtitle from other content */
+}
+
+.minimized-card img {
+    max-width: 100px;
+    margin: 0 auto; /* Center the image */
+    display: block;
+    margin-top: 20px;
+}
+
+.minimized-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+}
+
 /* Full Details Modal Styles */
 .modal {
     display: none; /* Hidden by default */
@@ -140,7 +189,6 @@ ul {
     cursor: pointer;
 }
 
-
 /* Content section styles */
 .content {
     display: none;
@@ -159,76 +207,78 @@ ul {
 
 /* Adjust the styles for the introduction text and animated text */
 .introduction {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 /* Animated text styles */
 .animated-text {
-  position: fixed;
-  bottom: 20vh; /* Default position for larger screens */
-  left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 3;
-  animation: moveText 1s infinite alternate; /* Animation for moving text */
+    position: fixed;
+    bottom: 20vh; /* Default position for larger screens */
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 3;
+    animation: moveText 1s infinite alternate; /* Animation for moving text */
 }
 
-  /* Adjust position for smaller screens */
-  @media (max-width: 768px) {
-    bottom: 10vh; /* Adjust position for screens up to 768px width */
-  }
+@media (max-width: 768px) {
+    .animated-text {
+        bottom: 10vh; /* Adjust position for screens up to 768px width */
+    }
+}
 
-  @media (max-width: 576px) {
-    bottom: 5vh; /* Adjust position for screens up to 576px width */
-  }
+@media (max-width: 576px) {
+    .animated-text {
+        bottom: 5vh; /* Adjust position for screens up to 576px width */
+    }
 }
 
 .message {
-  font-size: 20px;
-  color: white;
+    font-size: 20px;
+    color: white;
 }
 
 .finger {
-  width: 30px;
-  height: 50px;
-  filter: brightness(0) invert(1);
-  background-image: url('hand-finger-pointing-down.png'); /* Replace 'finger.png' with your finger image */
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center; /* Center the background image */
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: bounce 1s infinite alternate; /* Example animation */
+    width: 30px;
+    height: 50px;
+    filter: brightness(0) invert(1);
+    background-image: url('hand-finger-pointing-down.png'); /* Replace 'finger.png' with your finger image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; /* Center the background image */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 1s infinite alternate; /* Example animation */
 }
 
 /* Typing animation for introduction text */
 .intro-text {
-  font-size: 24px;
-  color: white;
-  overflow: hidden; /* Ensures text doesn't overflow */
-  white-space: nowrap; /* Prevents wrapping */
-  margin: 0 auto; /* Center text */
-  animation: typing 4s steps(40, end), removeBorder 4s step-end; /* Add removeBorder animation */
+    font-size: 24px;
+    color: white;
+    overflow: hidden; /* Ensures text doesn't overflow */
+    white-space: nowrap; /* Prevents wrapping */
+    margin: 0 auto; /* Center text */
+    animation: typing 4s steps(40, end), removeBorder 4s step-end; /* Add removeBorder animation */
 }
 
 /* Hide the border when animation is complete */
 .intro-text::after {
-  content: "";
-  border-right: 0px;
-  display: inline-block;
-  width: 0; /* Set width to 0 to hide the border */
+    content: "";
+    border-right: 0px;
+    display: inline-block;
+    width: 0; /* Set width to 0 to hide the border */
 }
 
 /* Typing animation for introduction text */
 .intro-header {
-  overflow: hidden; /* Ensures text doesn't overflow */
-  white-space: nowrap; /* Prevents wrapping */
-  margin: 0 auto; /* Center text */
+    overflow: hidden; /* Ensures text doesn't overflow */
+    white-space: nowrap; /* Prevents wrapping */
+    margin: 0 auto; /* Center text */
     font-size: 48px;
     font-weight: 700;
     padding-bottom: 10px;
@@ -237,52 +287,52 @@ ul {
 }
 
 .intro-header span {
-  border-right: .15em solid white; /* Typing cursor effect */
-  animation: typing 4s steps(40, end); /* Adjust timing as needed */
+    border-right: .15em solid white; /* Typing cursor effect */
+    animation: typing 4s steps(40, end); /* Adjust timing as needed */
 }
 
 /* Hide the border when animation is complete */
 .intro-header span::after {
-  content: "";
-  border-right: 0px;
-  display: inline-block;
-  width: 0; /* Set width to 0 to hide the border */
+    content: "";
+    border-right: 0px;
+    display: inline-block;
+    width: 0; /* Set width to 0 to hide the border */
 }
 
 /* Typing animation for introduction text */
 .intro-subheader {
-  text-align: center;
-  max-width: 600px;
-  padding: 20px;
-  border: 1px solid transparent;
-  overflow: hidden; /* Ensures text doesn't overflow */
-  white-space: nowrap; /* Prevents wrapping */
-  margin: 0 auto; /* Center text */
-  font-size: 24px;
-  color: white;
-  font-family: Poppins, sans-serif;
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid transparent;
+    overflow: hidden; /* Ensures text doesn't overflow */
+    white-space: nowrap; /* Prevents wrapping */
+    margin: 0 auto; /* Center text */
+    font-size: 24px;
+    color: white;
+    font-family: Poppins, sans-serif;
 }
 
 .intro-subheader span {
-  border-right: .15em solid white; /* Typing cursor effect */
-  animation: typing 4s steps(40, end); /* Adjust timing as needed */
+    border-right: .15em solid white; /* Typing cursor effect */
+    animation: typing 4s steps(40, end); /* Adjust timing as needed */
 }
 
 /* Hide the border when animation is complete */
 .intro-subheader span::after {
-  content: "";
-  border-right: 0px;
-  display: inline-block;
-  width: 0; /* Set width to 0 to hide the border */
+    content: "";
+    border-right: 0px;
+    display: inline-block;
+    width: 0; /* Set width to 0 to hide the border */
 }
 
 /* Hide the text and finger when a button is clicked */
 .text-hidden {
-  display: none;
+    display: none;
 }
 
 .finger-hidden {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 .bullet-points {
@@ -297,42 +347,9 @@ ul {
     animation: typing 4s steps(40, end) forwards; /* Typing animation */
 }
 
-/* Adjustments to card styling */
-.card {
-    /* Add a background color */
-    background-color: #f8f9fa; /* Light gray background color */
-    /* Add border for better visibility */
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    /* Add some padding to the card body */
-    padding: 20px;
-    /* Set a fixed width to prevent them from stacking vertically */
-    width: 100%;
-    /* Make sure the cards sit next to each other */
-    display: inline-block;
-    /* Adjust margin to create space between cards */
-    margin-right: 10px;
-}
-
-.card-body {
-    /* Limit the height of the card body and enable scrolling if content exceeds */
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-.card-title {
-    /* Add margin bottom to separate title from other content */
-    margin-bottom: 10px;
-}
-
-.card-subtitle {
-    /* Add margin top to separate subtitle from other content */
-    margin-top: 10px;
-}
-
-
 /* Keyframes to remove border at the end of typing animation */
 @keyframes removeBorder {
-  from, to { border-right: .15em solid white; }
+    from, to { border-right: .15em solid white; }
 }
 
 @keyframes typing {
@@ -341,15 +358,15 @@ ul {
 }
 
 @keyframes moveText {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(5px); /* Adjust distance and direction of movement */
-  }
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(5px); /* Adjust distance and direction of movement */
+    }
 }
 
 @keyframes bounce {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(5px); }
+    0% { transform: translateY(0); }
+    100% { transform: translateY(5px); }
 }
