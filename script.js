@@ -31,23 +31,39 @@ function openIntroModal() {
     openModal(details);
 }
 
+// Get the modal and the close button
+const modal = document.getElementById("fullDetailsModal");
+const closeBtn = document.getElementsByClassName("close")[0];
+
 // Add event listeners to each minimized card for hover and click
 const minimizedCards = document.querySelectorAll(".minimized-card");
 minimizedCards.forEach((card, index) => {
-    // Array containing the content for each card
-    const cardDetails = [
-        `<h2>Content for Card 1</h2><p>This is the content for Card 1.</p>`,
-        `<h2>Content for Card 2</h2><p>This is the content for Card 2.</p>`,
-        `<h2>Content for Card 3</h2><p>This is the content for Card 3.</p>`,
-        `<h2>Content for Card 4</h2><p>This is the content for Card 4.</p>`
-    ];
-
     card.addEventListener("mouseenter", () => {
-        openModal(cardDetails[index]);
+        // Simulate getting full details data (replace with your data)
+        const fullDetails = `
+            <h2>Security Engineer</h2>
+            <h4>Fortune 500 Global Engineering Provider</h4>
+            <ul>
+                <li>Led and managed the application security program, utilizing tools such as Snyk (SAST), Rapid7 (DAST), and Contrast-Assess (IAST) to ensure comprehensive coverage.</li>
+                <li>Provided guidance and mentorship to the application security team, fostering their growth and supporting their day-to-day activities and project work.</li>
+                <!-- Add other details -->
+            </ul>
+        `;
+        openModal(fullDetails);
     });
 
     card.addEventListener("click", () => {
-        openModal(cardDetails[index]);
+        // Simulate getting full details data (replace with your data)
+        const fullDetails = `
+            <h2>Security Engineer</h2>
+            <h4>Fortune 500 Global Engineering Provider</h4>
+            <ul>
+                <li>Led and managed the application security program, utilizing tools such as Snyk (SAST), Rapid7 (DAST), and Contrast-Assess (IAST) to ensure comprehensive coverage.</li>
+                <li>Provided guidance and mentorship to the application security team, fostering their growth and supporting their day-to-day activities and project work.</li>
+                <!-- Add other details -->
+            </ul>
+        `;
+        openModal(fullDetails);
     });
 });
 
@@ -78,8 +94,8 @@ function showContent(sectionId) {
         document.querySelector('.animated-text').classList.remove('text-hidden');
         document.querySelector('.finger').classList.remove('finger-hidden');
         document.querySelector('.intro-text').classList.remove('text-hidden');
-        document.querySelector('.intro-header').classList.remove('text-hidden');
-        document.querySelector('.intro-subheader').classList.remove('text-hidden');
+        document.querySelector('.intro-header').classList.remove('text-hidden');   
+        document.querySelector('.intro-subheader').classList.remove('text-hidden');   
 
         // Hide other sections
         document.querySelectorAll('.content').forEach(content => {
@@ -93,8 +109,8 @@ function showContent(sectionId) {
 
         // Hide intro text and header
         document.querySelector('.intro-text').classList.add('text-hidden');
-        document.querySelector('.intro-header').classList.add('text-hidden');
-        document.querySelector('.intro-subheader').classList.add('text-hidden');
+        document.querySelector('.intro-header').classList.add('text-hidden');   
+        document.querySelector('.intro-subheader').classList.add('text-hidden');   
 
         // Show other sections
         document.getElementById(sectionId + '-content').classList.remove('text-hidden');
@@ -111,6 +127,4 @@ navButtons.forEach(button => {
 });
 
 // When the page loads, initially show the intro content
-window.onload = function() {
-    showContent('intro');
-};
+showContent('intro');
