@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keir Li - Security Management (V6.5)</title>
+    <title>Keir Li - Security Management (V6.6)</title>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap CSS -->
@@ -25,7 +25,7 @@
     <div class="introduction">
         <div class="intro-text">
             <span class="intro-header">Hi. I'm Keir.</span><br>
-            <span class="learn-more">Hover over this text to learn more about me.</span>
+            <span class="learn-more">Click on this text to learn more about me.</span>
         </div>
     </div>
 
@@ -206,16 +206,13 @@
         const fullDetailsContent = document.querySelector(".modal-content");
         if (fullDetailsContent) {
             // Clear previous content
-            fullDetailsContent.innerHTML = "";
+            fullDetailsContent.innerHTML = details;
 
             // Add close button
             const closeButton = document.createElement("span");
             closeButton.classList.add("close");
             closeButton.innerHTML = "&times;";
-            fullDetailsContent.appendChild(closeButton);
-
-            // Add details content
-            fullDetailsContent.innerHTML += details;
+            fullDetailsContent.prepend(closeButton); // Prepend to ensure it's at the top
 
             // Show modal
             modal.style.display = "block";
@@ -248,6 +245,13 @@
 
     // Get the modal
     const modal = document.getElementById("fullDetailsModal");
+
+    // Close the modal when the user clicks outside the modal content
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
 
     // Open the modal when the "Learn more about me here" text is clicked
     const learnMoreElement = document.querySelector(".learn-more");
@@ -374,11 +378,6 @@
     // When the page loads, initially show the intro content
     showContent('intro');
 </script>
-
-
-
-
-
 
 <!-- Bootstrap JavaScript -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
