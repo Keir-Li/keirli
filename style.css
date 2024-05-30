@@ -375,6 +375,12 @@ ul {
     animation: typing 4s steps(40, end) forwards; /* Typing animation */
 }
 
+.learn-more:hover {
+    transform: scale(5.05);
+    text-decoration: underline;
+    color: yellow;
+}
+
 
 /* Updated CSS for the skills section */
 
