@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keir Li - Security Management (V6.3)</title>
+    <title>Keir Li - Security Management (V6.4)</title>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap CSS -->
@@ -270,6 +270,7 @@
 
         switch (index) {
             case 1:
+                image = "engineeringicon.png";
                 title = "Security Engineer";
                 company = "Fortune 500 Global Engineering Provider";
                 skills = "Cybersecurity | Snyk (SAST) | Rapid7 (DAST) | Contrast-Assess (IAST) | Open Source Scanning (Mend) | Vulnerability Scanning (Tenable Nessus) | SonarQube (SCA) | MFA & Access Keys | Pen Testing | Crowdstrike (Intrusion Detection) | Deprecated OS | Container Critical/Top Issues | Incident Management | Security Release Review | AWS | Azure | DevOps | Threat Modeling | OWASP Top 10 | CWE 25 | Risk Score Management | Mentoring";
@@ -277,6 +278,7 @@
                 expertise = "Led security projects, conducted risk assessments, and implemented controls, translating technical concepts for non-technical stakeholders, and evaluating the effectiveness of security processes through strategic analysis.";
                 break;
             case 2:
+                image = "recruitmenticon.png";
                 title = "Senior Software Engineer";
                 company = "World Class Leading Recruitment Organisation";
                 skills = "Spunk Monitoring & Alerting | Salesforce | Waterfall | AWS | Mulesoft API Management | DevOps | Vulnerability & Patching Manager | MoveItAutomation | ServiceNow | BigPanda | Cybersecurity | Incident Management | KeePass Security Set up & Management | Jira | Documentation and KB Builder";
@@ -284,6 +286,7 @@
                 expertise = "Proficient in Salesforce, AWS, and DevOps practices. Managed incident responses and documentation processes for improved efficiency.";
                 break;
             case 3:
+                image = "infrastructureicon.png";
                 title = "Application Support Lead";
                 company = "National Infrastructure Hub";
                 skills = ".NET Framework, Core, 5 & 6 | Blazor | Scrum/Agile | GitHub & DevOps | UAT Lead | Azure | API Management | IAC ARM Templates | Cybersecurity | 365 & Active Directory | LastPass Security | Phishing Lead & Auditor | Migrations (Azure & SharePoint) | Technical & Supporting Application Lead | Documentation";
@@ -291,6 +294,7 @@
                 expertise = "Skilled in .NET Framework, Azure, and API management. Managed migrations to Azure & SharePoint, streamlining processes and improving system reliability.";
                 break;
             case 4:
+                image = "interneticon.png";
                 title = "Senior Technical Analyst";
                 company = "Global Cybersecurity Trust Provider";
                 skills = "Cybersecurity | UAT & Hypercare | Jira Incident & Bug Ticket Manager | Azure | Salesforce | Project & Process Management | Senior POC, Out of Hours & Escalation Point | Global Partner Trainer (USA & Europe)";
@@ -298,14 +302,11 @@
                 expertise = "Proficient in cybersecurity practices, project management, and Salesforce. Managed Jira incident & bug tickets for efficient issue resolution.";
                 break;
             default:
-                title = "Default Title";
-                company = "Default Company";
-                skills = "Default Skill 1 | Default Skill 2";
-                leadership = "Default leadership text";
-                expertise = "Default expertise text";
+                title = "Hover Over A Position to View the Details";
         }
 
         return `
+            <img src="${image}" class="mx-auto d-block mt-3" alt="Position Icon" style="max-width: 100px;">
             <h2>${title}</h2>
             <h4>${company}</h4>
             <div class="modal-section skills">
