@@ -396,7 +396,11 @@ ul {
 }
 
 .skill-category h3 {
+    display: flex;
     font-weight: bold;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .skill-cards-container {
