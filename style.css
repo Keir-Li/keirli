@@ -469,13 +469,15 @@ ul {
     .skills-section {
         margin: -15%;
         margin-top: -25%;
+        font-size: 0.59rem;
     }
 
     .image {
-        display: none;
+        display: none!important;
 
     .card {
         margin: -5%;
+        font-size: 0.6rem;
     }
 
     .card-title {
