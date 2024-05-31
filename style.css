@@ -471,6 +471,9 @@ ul {
         margin-top: -25%;
     }
 
+    .image {
+        display: none;
+
     .card {
         margin: -5%;
     }
