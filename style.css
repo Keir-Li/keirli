@@ -199,6 +199,42 @@ ul {
     color: #555;
 }
 
+.skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skills-category {
+    flex: 1 1 calc(33.333% - 20px); /* Adjusts the width and gap */
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.skills-category h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.2em;
+}
+
+.skills-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-category ul li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.skills-category ul li strong {
+    color: #000;
+}
+
+
 
 /* Close Button */
 .close {
