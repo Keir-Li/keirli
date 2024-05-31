@@ -1,12 +1,8 @@
 /* General styles */
 
 body, html {
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove default paddings */
-}
-
-body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
 }
 
@@ -21,35 +17,50 @@ ul {
 }
 
 .row {
-    
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    align-content: center; /* Center the cards horizontally */
-    gap: 20px; /* Add space between the cards */
-    margin: 0; /* Remove default margin */
-    padding: 20px 0; /* Optional: Add padding to the top and bottom */
+    gap: 20px;
     justify-content: center;
     align-items: stretch;
 }
 
 /* Column styles */
 .col-md-3 {
-    flex: 0 0 calc(25% - 20px); /* Ensure four cards fit in one row with spacing */
-    max-width: calc(25% - 20px); /* Ensure columns take up 25% of the container's width */
+    flex: 0 0 calc(25% - 20px);
+    max-width: calc(25% - 20px);
     box-sizing: border-box;
+}
+
+@media (max-width: 992px) {
+    .col-md-3 {
+        flex: 0 0 calc(33.333% - 20px);
+        max-width: calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .col-md-3 {
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    .col-md-3 {
+        flex: 0 0 calc(100% - 20px);
+        max-width: calc(100% - 20px);
+    }
 }
 
 /* Jumbotron styles */
 .jumbotron {
     position: relative;
-    height: 100vh; /* Adjust to fill viewport */
+    height: 100vh;
     overflow: hidden;
     color: white;
     text-align: center;
-    margin: 0; /* Remove default margins */
-    margin-bottom: 0px;
-    padding: 0; /* Remove default paddings */
+    margin: 0;
+    padding: 0;
 }
 
 #background-video {
@@ -57,68 +68,55 @@ ul {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
 }
 
 /* Dark bar styles */
 .bottom-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(25, 25, 26, .91); /* Dark background color */
-  padding: 10px 0; /* Adjust padding as needed */
-  z-index: 3; /* Ensure it's above other elements */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(25, 25, 26, .91);
+    padding: 10px 0;
+    z-index: 3;
 }
 
 .buttons {
-  display: flex;
-  justify-content: center;
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+    display: flex;
+    justify-content: center;
 }
 
 .button {
-  background-color: transparent;
-  color: white;
-  border: none;
-  padding: 15px 30px; /* Adjust padding for bigger buttons */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border-radius: 10px; /* Add border radius for rounded corners */
-  font-size: 18px; /* Increase font size for better visibility */
-}
-
-.buttons button {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
     color: white;
     border: none;
-    padding: 15px 30px; /* Adjust padding for bigger buttons */
-    margin: 0 20px; /* Adjust margin for better spacing */
+    padding: 15px 30px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border-radius: 10px; /* Add border radius for rounded corners */
-    font-size: 18px; /* Increase font size for better visibility */
+    border-radius: 10px;
+    font-size: 18px;
+    margin: 0 10px;
 }
 
 .button:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Lighten background color on hover */
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .button.active {
-  background-color: rgba(255, 255, 255, 0.2); /* Light background color for active button */
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Card styles */
 .card {
-    background-color: #f8f9fa; /* Light gray background color */
-    border: 1px solid rgba(0, 0, 0, 0.125); /* Add border for better visibility */
-    padding: 20px; /* Add some padding to the card body */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for depth */
-    transition: transform 0.2s; /* Smooth transform effect */
-    height: 100%; /* Ensure cards take the full height of the column */
+    background-color: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -137,47 +135,35 @@ ul {
 
 .card-title {
     font-size: 2vh;
-    margin-bottom: 10px; /* Add margin bottom to separate title from other content */
+    margin-bottom: 10px;
 }
 
 .card-subtitle {
-    margin-top: 10px; /* Add margin top to separate subtitle from other content */
-}
-
-.minimized-card img {
-    max-width: 100px;
-    margin: 0 auto; /* Center the image */
-    display: block;
-    margin-top: 20px;
-}
-
-.minimized-card:hover {
-    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    margin-top: 10px;
 }
 
 /* Full Details Modal Styles */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Modal Content */
 .modal-content {
     color: black;
     background-color: #fefefe;
-    margin: 10% auto; /* 15% from the top and centered */
+    margin: 10% auto;
     padding: 20px;
     font-size: 13px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    max-width: 750px; /* Max width of modal */
+    width: 80%;
+    max-width: 750px;
     border-radius: 10px;
 }
 
@@ -199,14 +185,11 @@ ul {
     color: #555;
 }
 
-
-
-/* Close Button */
 .close {
     color: #aaa;
-    position: absolute; 
-    top: 10px; /* Adjust as needed */
-    right: 15px; /* Adjust as needed */
+    position: absolute;
+    top: 10px;
+    right: 15px;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -234,7 +217,6 @@ ul {
     display: block;
 }
 
-/* Adjust the styles for the introduction text and animated text */
 .introduction {
     position: absolute;
     top: 50%;
@@ -243,26 +225,25 @@ ul {
     text-align: center;
 }
 
-/* Animated text styles */
 .animated-text {
     position: fixed;
-    bottom: 20vh; /* Default position for larger screens */
+    bottom: 20vh;
     left: 0;
     right: 0;
     text-align: center;
     z-index: 3;
-    animation: moveText 1s infinite alternate; /* Animation for moving text */
+    animation: moveText 1s infinite alternate;
 }
 
 @media (max-width: 768px) {
     .animated-text {
-        bottom: 10vh; /* Adjust position for screens up to 768px width */
+        bottom: 10vh;
     }
 }
 
 @media (max-width: 576px) {
     .animated-text {
-        bottom: 5vh; /* Adjust position for screens up to 576px width */
+        bottom: 5vh;
     }
 }
 
@@ -275,39 +256,36 @@ ul {
     width: 30px;
     height: 50px;
     filter: brightness(0) invert(1);
-    background-image: url('hand-finger-pointing-down.png'); /* Replace 'finger.png' with your finger image */
+    background-image: url('hand-finger-pointing-down.png');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center; /* Center the background image */
+    background-position: center;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    animation: bounce 1s infinite alternate; /* Example animation */
+    animation: bounce 1s infinite alternate;
 }
 
-/* Typing animation for introduction text */
 .intro-text {
     font-size: 24px;
     color: white;
-    overflow: hidden; /* Ensures text doesn't overflow */
-    white-space: nowrap; /* Prevents wrapping */
-    margin: 0 auto; /* Center text */
-    animation: typing 4s steps(40, end), removeBorder 4s step-end; /* Add removeBorder animation */
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 4s steps(40, end), removeBorder 4s step-end;
 }
 
-/* Hide the border when animation is complete */
 .intro-text::after {
     content: "";
     border-right: 0px;
     display: inline-block;
-    width: 0; /* Set width to 0 to hide the border */
+    width: 0;
 }
 
-/* Typing animation for introduction text */
 .intro-header {
-    overflow: hidden; /* Ensures text doesn't overflow */
-    white-space: nowrap; /* Prevents wrapping */
-    margin: 0 auto; /* Center text */
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
     font-size: 48px;
     font-weight: 700;
     padding-bottom: 10px;
@@ -316,46 +294,42 @@ ul {
 }
 
 .intro-header span {
-    border-right: .15em solid white; /* Typing cursor effect */
-    animation: typing 4s steps(40, end); /* Adjust timing as needed */
+    border-right: .15em solid white;
+    animation: typing 4s steps(40, end);
 }
 
-/* Hide the border when animation is complete */
 .intro-header span::after {
     content: "";
     border-right: 0px;
     display: inline-block;
-    width: 0; /* Set width to 0 to hide the border */
+    width: 0;
 }
 
-/* Typing animation for introduction text */
 .intro-subheader {
     text-align: center;
     max-width: 600px;
     padding: 20px;
     border: 1px solid transparent;
-    overflow: hidden; /* Ensures text doesn't overflow */
-    white-space: nowrap; /* Prevents wrapping */
-    margin: 0 auto; /* Center text */
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
     font-size: 24px;
     color: white;
     font-family: Poppins, sans-serif;
 }
 
 .intro-subheader span {
-    border-right: .15em solid white; /* Typing cursor effect */
-    animation: typing 4s steps(40, end); /* Adjust timing as needed */
+    border-right: .15em solid white;
+    animation: typing 4s steps(40, end);
 }
 
-/* Hide the border when animation is complete */
 .intro-subheader span::after {
     content: "";
     border-right: 0px;
     display: inline-block;
-    width: 0; /* Set width to 0 to hide the border */
+    width: 0;
 }
 
-/* Hide the text and finger when a button is clicked */
 .text-hidden {
     display: none;
 }
@@ -365,26 +339,22 @@ ul {
 }
 
 .bullet-points {
-    margin-bottom: 10px; /* Add space between bullet points and text */
+    margin-bottom: 10px;
 }
 
 .typing-line {
     display: block;
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden; /* Hide overflowing text */
-    width: 0; /* Initially set width to 0 */
-    animation: typing 4s steps(40, end) forwards; /* Typing animation */
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 4s steps(40, end) forwards;
 }
 
 .learn-more:hover {
-    transform: scale(5.05);
+    transform: scale(1.05);
     text-decoration: underline;
     color: yellow;
 }
-
-
-/* Updated CSS for the skills section */
-
 
 .skills-section {
     display: flex;
@@ -394,7 +364,7 @@ ul {
 }
 
 .skills-category {
-    flex: 1 1 calc(25.333% - 20px); /* Adjusts the width and gap */
+    flex: 1 1 calc(25.333% - 20px);
     background: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
@@ -413,66 +383,108 @@ ul {
 }
 
 .skills-category ul li {
-    margin-bottom: 10px;
-    color: #555;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
 }
 
-.skills-category ul li strong {
-    color: #000;
+.skills-category ul li:last-child {
+    border-bottom: none;
 }
 
-
-
-
-.card-deck {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-
-.email-contact {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
-
-.email-icon {
-    width: 50px; /* Adjust size as needed */
-    height: auto;
-    margin-right: 10px; /* Add some space between icon and email address */
-    }
-
-.email-link {
-    color: #333; /* Adjust color as needed */
-    text-decoration: none;
-    font-size: 18px;
-    }
-
-.email-link:hover {
-    text-decoration: underline; /* Add underline on hover */
-    }
-
-/* Keyframes to remove border at the end of typing animation */
-@keyframes removeBorder {
-    from, to { border-right: .15em solid white; }
-}
-
+/* Animations */
 @keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes moveText {
-    0% {
-        transform: translateY(0);
-    }
-    100% {
-        transform: translateY(5px); /* Adjust distance and direction of movement */
-    }
+    from { width: 0 }
+    to { width: 100% }
 }
 
 @keyframes bounce {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(5px); }
+    from {
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+@keyframes moveText {
+    from {
+        transform: translateX(-50%) translateY(0);
+    }
+    to {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+@keyframes removeBorder {
+    from {
+        border-right: .15em solid white;
+    }
+    to {
+        border-right: 0;
+    }
+}
+
+/* Email Contact Section */
+.email-contact {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.email-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.email-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.email-link:hover {
+    text-decoration: underline;
+}
+
+/* Specific adjustments for responsiveness */
+@media (max-width: 576px) {
+    .jumbotron .introduction {
+        font-size: 18px;
+    }
+
+    .intro-header {
+        font-size: 36px;
+    }
+
+    .intro-subheader {
+        font-size: 18px;
+    }
+
+    .card-title {
+        font-size: 1.5em;
+    }
+
+    .card-subtitle {
+        font-size: 1em;
+    }
+
+    .modal-content {
+        padding: 10px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-header {
+        font-size: 42px;
+    }
+
+    .intro-subheader {
+        font-size: 20px;
+    }
 }
