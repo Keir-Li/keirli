@@ -466,6 +466,11 @@ ul {
         display: none;
     }
 
+    .skills-section {
+        margin: -15%;
+        margin-top: -25%;
+    }
+
     .card {
         margin: -5%;
     }
