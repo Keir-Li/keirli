@@ -385,6 +385,7 @@ ul {
 .skills-category ul li {
     padding: 5px 0;
     border-bottom: 1px solid #ddd;
+    color: black
 }
 
 .skills-category ul li:last-child {
