@@ -394,7 +394,7 @@ ul {
 }
 
 .skills-category {
-    flex: 1 1 calc(33.333% - 20px); /* Adjusts the width and gap */
+    flex: 1 1 calc(25.333% - 20px); /* Adjusts the width and gap */
     background: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
