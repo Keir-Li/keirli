@@ -462,12 +462,21 @@ ul {
         font-size: 18px;
     }
 
+    .section-headings {
+        display: none;
+    }
+
+    .card {
+        margin: -5%;
+    }
+
     .card-title {
         font-size: 1.5em;
     }
 
     .card-subtitle {
         font-size: 1em;
+        display: none;
     }
 
     .modal-content {
