@@ -1,5 +1,4 @@
 /* General styles */
-
 body, html {
     margin: 0;
     padding: 0;
@@ -381,6 +380,7 @@ ul {
     list-style: none;
     padding: 0;
 }
+
 
 .skills-category ul li {
     padding: 5px 0;
