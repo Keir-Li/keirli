@@ -493,6 +493,10 @@ ul {
         display: none!important;
     }
 
+    .animated-text {
+    top: 65%;
+    }
+
     .modal-content {
         padding: 10px;
     }
