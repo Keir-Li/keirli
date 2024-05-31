@@ -228,8 +228,8 @@ ul {
 .animated-text {
     position: fixed;
     bottom: 20vh;
-    left: 0;
-    right: 0;
+    top: 75%;
+    left: 50%;
     text-align: center;
     z-index: 3;
     animation: moveText 1s infinite alternate;
@@ -267,7 +267,7 @@ ul {
 }
 
 .intro-text {
-    font-size: 24px;
+    font-size: 20px;
     color: white;
     overflow: hidden;
     white-space: nowrap;
