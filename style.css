@@ -481,6 +481,10 @@ ul {
         font-size: 0.6rem;
     }
 
+    .card-body {
+        overflow-y: hidden !important;
+    }
+
     .card-title {
         font-size: 1.5em;
     }
