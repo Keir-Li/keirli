@@ -485,8 +485,7 @@ ul {
     }
 
     .card-subtitle {
-        font-size: 1em;
-        display: none;
+        display: none!important;
     }
 
     .modal-content {
